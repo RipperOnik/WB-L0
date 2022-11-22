@@ -50,8 +50,16 @@
           </div>
           <div class="menu-icon">
             <div class="menu-icon-img">
-             <img src="images/cart.svg"/>
+              <svg style="position:absolute; left:15%" width="26" height="23" viewBox="0 0 26 23" fill="none" xmlns="http://www.w3.org/2000/svg" class="ui__basket-ico">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M11.2214 17.4665C11.3829 17.9206 11.8452 18.1949 12.3212 18.119L25.0874 16.0828C25.5004 16.017 25.8288 15.701 25.9106 15.2909L27.2654 8.49865C27.3875 7.88644 26.925 7.31324 26.3008 7.30317L8.94122 7.02324C8.24354 7.01199 7.74913 7.70067 7.98289 8.35812L11.2214 17.4665Z" fill="white"/>
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M11.8262 25.3593C13.1109 25.3593 14.1523 24.3178 14.1523 23.0331C14.1523 21.7484 13.1109 20.707 11.8262 20.707C10.5415 20.707 9.5 21.7484 9.5 23.0331C9.5 24.3178 10.5415 25.3593 11.8262 25.3593Z" fill="white"/>
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M23.457 25.3593C24.7417 25.3593 25.7831 24.3178 25.7831 23.0331C25.7831 21.7484 24.7417 20.707 23.457 20.707C22.1723 20.707 21.1308 21.7484 21.1308 23.0331C21.1308 24.3178 22.1723 25.3593 23.457 25.3593Z" fill="white"/>
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M5 4C6.933 4 8.5 3.77614 8.5 3.5C8.5 3.22386 6.933 3 5 3C3.067 3 1.5 3.22386 1.5 3.5C1.5 3.77614 3.067 4 5 4Z" fill="white"/>
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M2.45442 2.65147C3.1177 2.55672 4.01745 2.5 5 2.5C5.98255 2.5 6.8823 2.55672 7.54558 2.65147C7.87345 2.69831 8.16489 2.75734 8.38495 2.83167C8.4917 2.86772 8.61185 2.91717 8.71511 2.98926C8.80017 3.04864 9 3.21275 9 3.5C9 3.78725 8.80017 3.95136 8.71511 4.01074C8.61185 4.08283 8.4917 4.13228 8.38495 4.16833C8.16489 4.24266 7.87345 4.30169 7.54558 4.34853C6.8823 4.44328 5.98255 4.5 5 4.5C4.01745 4.5 3.1177 4.44328 2.45442 4.34853C2.12655 4.30169 1.83511 4.24266 1.61505 4.16833C1.5083 4.13228 1.38815 4.08283 1.28489 4.01074C1.19983 3.95136 1 3.78725 1 3.5C1 3.21275 1.19983 3.04864 1.28489 2.98926C1.38815 2.91717 1.5083 2.86772 1.61505 2.83167C1.83511 2.75734 2.12655 2.69831 2.45442 2.65147Z" fill="white"/>
+              </svg>
             </div>
+            <div class="cart-item-number">3</div>
+		
             <div class="menu-icon-text">Корзина</div>
         </div>
       </div>
@@ -63,19 +71,18 @@
             <div class="left-cart-container">
                 <div class="left-cart-items">
                     <div class="left-cart-items-header">
-                        <div style="display: flex; align-items:center; gap:15px;">
+                        <div style="display: flex; align-items:center; gap:15px;" id="left-cart-items-header-opened">
                             <input type="checkbox" id="chooseAll" name="chooseAll" checked>
-                            <label for="chooseAll" style="font-style: normal;
-                            font-weight: 400;
-                            font-size: 16px;
-                            line-height: 24px;">Выбрать все</label>
+                            <label for="chooseAll" class="left-items-title">Выбрать все</label>
                         </div>
-                        <div class="arrow-button">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#8A898E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-up"><polyline points="18 15 12 9 6 15"></polyline></svg>
+                        <div class="left-items-title" id="left-cart-items-header-closed" style="display: none;"> <span id="items-number"></span> товаров <spa id="items-bill"></spa> сом</div>
+                        <div class="arrow-button" onclick="collapse(this)" for="left-cart-items-main">
+                            <svg id="opened" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#8A898E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-up"><polyline points="18 15 12 9 6 15"></polyline></svg>
+                            <svg id="closed" style="display: none;" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#8A898E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg>
                         </div>
                     </div>
                     <hr>
-                    <div class="left-cart-items-main">
+                    <div class="left-cart-items-main" id="left-cart-items-main">
                         <!-- item 1 -->
                         <div class="left-cart-item">
                             <div class="left-cart-item-desc-container ">
@@ -98,7 +105,7 @@
                                 <div class="left-cart-item-func">
                                     <div class="stepper-container">
                                         <div class="stepper">
-                                          <button class="decrement" for="stepper1" onclick="stepper(this)">-</button>
+                                          <button class="decrement" for="stepper1" id="decrement1" onclick="stepper(this)">-</button>
                                           <input
                                             type="number"
                                             class="incrementor-input"
@@ -109,7 +116,7 @@
                                             id="stepper1"
                                             readonly
                                           />
-                                          <button class="increment" for="stepper1" onclick="stepper(this)">+</button>
+                                          <button class="increment" for="stepper1" id="increment1" onclick="stepper(this)">+</button>
                                         </div>
                                       </div>
                                     <div class="items-left-text">
@@ -122,13 +129,13 @@
                                 </div>
                                 <div class="item-price-container">
                                     <div class="item-price">
-                                        <div class="item-price-text">
+                                        <div class="item-price-text" id="price1">
                                             522
                                         </div>
                                         <div class="item-price-currency"> сом</div>
                                     </div>
                                     <div class="item-price-discount">
-                                        <span>1051</span> сом
+                                        <span id="initial-price1">1051</span> сом
                                     </div>
                                 </div>
                             </div>
@@ -136,8 +143,8 @@
                         <!-- item 2 -->
                         <div class="left-cart-item">
                             <div class="left-cart-item-desc-container ">
-                                <input type="checkbox" id="item1" name="item1" checked>
-                                <label for="item1" class="left-cart-item-desc-container">
+                                <input type="checkbox" id="item2" name="item2" checked>
+                                <label for="item2" class="left-cart-item-desc-container">
                                     <img class="item-img" src="images/item2.svg" alt="item image">
                                     <div class="left-cart-item-desc">
                                         <div class="item-title-text">Силиконовый чехол картхолдер (отверстия) для карт, прозрачный кейс бампер на Apple Iphone XR, MobiSafe</div>
@@ -155,7 +162,7 @@
                                 <div class="left-cart-item-func">
                                     <div class="stepper-container">
                                         <div class="stepper">
-                                          <button class="decrement" for="stepper2" onclick="stepper(this)">-</button>
+                                          <button class="decrement" for="stepper2" id="decrement2" onclick="stepper(this)">-</button>
                                           <input
                                             type="number"
                                             class="incrementor-input"
@@ -166,7 +173,7 @@
                                             id="stepper2"
                                             readonly
                                           />
-                                          <button class="increment" for="stepper2" onclick="stepper(this)">+</button>
+                                          <button class="increment" for="stepper2" id="increment2" onclick="stepper(this)">+</button>
                                         </div>
                                       </div>
                                     <div class="left-cart-item-buttons">
@@ -176,13 +183,13 @@
                                 </div>
                                 <div class="item-price-container">
                                     <div class="item-price">
-                                        <div class="item-price-text">
+                                        <div class="item-price-text" id="price2">
                                             2100047
                                         </div>
                                         <div class="item-price-currency"> сом</div>
                                     </div>
                                     <div class="item-price-discount">
-                                        <span>2300047</span> сом
+                                        <span id="initial-price2">2300047</span> сом
                                     </div>
                                 </div>
                             </div>
@@ -190,8 +197,8 @@
                          <!-- item 3 -->
                          <div class="left-cart-item">
                           <div class="left-cart-item-desc-container ">
-                              <input type="checkbox" id="item1" name="item1" checked>
-                              <label for="item1" class="left-cart-item-desc-container">
+                              <input type="checkbox" id="item3" name="item3" checked>
+                              <label for="item3" class="left-cart-item-desc-container">
                                   <img class="item-img" src="images/item3.svg" alt="item image">
                                   <div class="left-cart-item-desc">
                                       <div class="item-title-text">Карандаши цветные Faber-Castell "Замок", набор 24 цвета, заточенные, шестигранные, Faber Castell</div>
@@ -205,7 +212,7 @@
                               <div class="left-cart-item-func">
                                   <div class="stepper-container">
                                       <div class="stepper">
-                                        <button class="decrement" for="stepper3" onclick="stepper(this)">-</button>
+                                        <button class="decrement" for="stepper3" id="decrement3" onclick="stepper(this)">-</button>
                                         <input
                                           type="number"
                                           class="incrementor-input"
@@ -216,7 +223,7 @@
                                           id="stepper3"
                                           readonly
                                         />
-                                        <button class="increment" for="stepper3" onclick="stepper(this)">+</button>
+                                        <button class="increment" for="stepper3" id="increment3" onclick="stepper(this)">+</button>
                                       </div>
                                     </div>
                                   <div class="items-left-text">
@@ -229,13 +236,13 @@
                               </div>
                               <div class="item-price-container">
                                   <div class="item-price">
-                                      <div class="item-price-text">
+                                      <div class="item-price-text" id="price3">
                                           494
                                       </div>
                                       <div class="item-price-currency"> сом</div>
                                   </div>
                                   <div class="item-price-discount">
-                                      <span>950</span> сом
+                                      <span id="initial-price3">950</span> сом
                                   </div>
                               </div>
                           </div>
@@ -251,5 +258,6 @@
         © 2022 ООО «Товары и точка»
     </footer>
     <script src="scripts/stepper.js"></script>
+    <script src="scripts/collapse-checkbox.js"></script>
   </body>
 </html>

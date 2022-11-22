@@ -152,6 +152,7 @@ input[type="search"] {
 }
 .menu-icon {
   display: flex;
+  position: relative;
   flex-grow: 1;
   flex-direction: column;
   justify-content: center;
@@ -160,7 +161,6 @@ input[type="search"] {
   gap: 6px;
   cursor: pointer;
 
-  /* width: 56px; */
   height: 56px;
 }
 .menu-icon-text {
@@ -176,5 +176,22 @@ input[type="search"] {
 .menu-icon-img {
   height: 30px;
   display: flex;
+  width: 100%;
+}
+.cart-item-number {
+  position: absolute;
+  left: 52%;
+  bottom: 75%;
+  width: 15px;
+  height: 16px;
+  background: #f55123;
+  border-radius: 16px;
+  font-size: 10px;
+  color: white;
+
+  display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
+  padding: 0px 2px;
 }
