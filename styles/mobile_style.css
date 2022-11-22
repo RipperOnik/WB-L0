@@ -1,0 +1,47 @@
+.button-search-mobile {
+  position: static;
+  text-indent: -999px;
+  overflow: hidden;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  margin-right: 13px;
+  border: 1px solid transparent;
+  border-radius: inherit;
+  background: transparent
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='19.51' height='20.2' class='bi bi-search' fill='rgba(255,255,255,1)' viewBox='0 0 16 16'%3E%3Cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z'%3E%3C/path%3E%3C/svg%3E")
+    no-repeat center;
+  cursor: pointer;
+  opacity: 1;
+}
+/* display mobile  */
+@media screen and (max-width: 800px) {
+  .navbar {
+    height: 56px;
+  }
+  .form-search {
+    display: none;
+  }
+  .menu-icons {
+    display: none;
+  }
+  .logo {
+    height: 24px;
+    width: auto;
+  }
+  .hamburger-logo-container {
+    flex-grow: 1;
+  }
+  .hamburger {
+    display: none;
+  }
+}
+/* display pc */
+@media screen and (min-width: 800px) {
+  .button-search-mobile {
+    display: none;
+  }
+  .hamburger-mobile {
+    display: none;
+  }
+}

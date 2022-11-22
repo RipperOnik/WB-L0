@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles/style.css" />
+    <link rel="stylesheet" href="styles/mobile_style.css" />
+    <link rel="stylesheet" href="styles/main_style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <header>
+      <div class="navbar">
+        <div class="hamburger-logo-container">
+          <div class="hamburger">
+            <div class="hamburger-bars" style="position: absolute;
+            left: 10px;
+            top: 12px;">
+              <span class="bar"></span>
+              <span class="bar"></span>
+              <span class="bar"></span>
+            </div>
+          </div>
+          <div class="hamburger-mobile">
+            <div class="hamburger-bars">
+              <span class="bar" style="width: 22.5px;"></span>
+              <span class="bar" style="width: 22.5px;"></span>
+              <span class="bar" style="width: 15px;"></span>
+            </div>
+
+          </div>
+          <div class="logo">ТОВАРЫ И ТОЧКА</div>
+        </div>
+        <button class="button-search-mobile">Search</button>
+
+
+        <form class="form-search">
+          <input type="search" placeholder="Я ищу..." />
+          <button type="submit" class="button-search" style="position: absolute;
+          right: 20px;
+          top: 12px;">Search</button>
+        </form>
+        <div class="menu-icons">
+          <div class="menu-icon">
+            <div class="menu-icon-img">
+              <img src="images/profile.svg"/>
+            </div>
+            <div class="menu-icon-text">Профиль</div>
+          </div>
+          <div class="menu-icon">
+            <div class="menu-icon-img">
+             <img src="images/cart.svg"/>
+            </div>
+            <div class="menu-icon-text">Корзина</div>
+        </div>
+      </div>
+    </header>
+    <main>
+        <!-- left -->
+        <div class="left">
+            <div class="left-title">Корзина</div>
+            <div class="left-cart-container">
+                <div class="left-cart-items">
+                    <div class="left-cart-items-header">
+                        <div style="display: flex; align-items:center; gap:15px;">
+                            <input type="checkbox" id="chooseAll" name="chooseAll" checked>
+                            <label for="chooseAll" style="font-style: normal;
+                            font-weight: 400;
+                            font-size: 16px;
+                            line-height: 24px;">Выбрать все</label>
+                        </div>
+                        <div class="arrow-button">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#8A898E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-up"><polyline points="18 15 12 9 6 15"></polyline></svg>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="left-cart-items-main">
+                        <!-- item 1 -->
+                        <div class="left-cart-item">
+                            <div class="left-cart-item-desc-container ">
+                                <input type="checkbox" id="item1" name="item1" checked>
+                                <label for="item1" class="left-cart-item-desc-container">
+                                    <img class="item-img" src="images/item1.svg" alt="item image">
+                                    <div class="left-cart-item-desc">
+                                        <div class="item-title-text">Футболка UZcotton мужская</div>
+                                        <div style="display: flex; align-items: center; gap: 16px;">
+                                            <div class="item-desc-text">Цвет: белый</div>
+                                            <div class="item-desc-text">Размер: 56</div>
+                                        </div>
+                                        <div class="item-footer-text">Коледино WB</div>
+                                        <div class="item-footer-text" style="display: flex; align-items: center">ООО Вайлдберриз  <img src="images/i.svg"></div>
+                                    </div>
+                                </label>
+
+                            </div>
+                            <div class="left-cart-item-func-container">
+                                <div class="left-cart-item-func">
+                                    <div class="stepper-container">
+                                        <div class="stepper">
+                                          <button class="decrement" for="stepper1" onclick="stepper(this)">-</button>
+                                          <input
+                                            type="number"
+                                            class="incrementor-input"
+                                            min="1"
+                                            max="2"
+                                            step="1"
+                                            value="1"
+                                            id="stepper1"
+                                            readonly
+                                          />
+                                          <button class="increment" for="stepper1" onclick="stepper(this)">+</button>
+                                        </div>
+                                      </div>
+                                    <div class="items-left-text">
+                                        Осталось 2 шт.
+                                    </div>
+                                    <div class="left-cart-item-buttons">
+                                        <button class="img-button"><img src="images/like-button.svg" alt="like"></button>
+                                        <button class="img-button"><img src="images/delete-button.svg" alt="delete"></button>
+                                    </div>
+                                </div>
+                                <div class="item-price-container">
+                                    <div class="item-price">
+                                        <div class="item-price-text">
+                                            522
+                                        </div>
+                                        <div class="item-price-currency"> сом</div>
+                                    </div>
+                                    <div class="item-price-discount">
+                                        <span>1051</span> сом
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- item 2 -->
+                        <div class="left-cart-item">
+                            <div class="left-cart-item-desc-container ">
+                                <input type="checkbox" id="item1" name="item1" checked>
+                                <label for="item1" class="left-cart-item-desc-container">
+                                    <img class="item-img" src="images/item2.svg" alt="item image">
+                                    <div class="left-cart-item-desc">
+                                        <div class="item-title-text">Силиконовый чехол картхолдер (отверстия) для карт, прозрачный кейс бампер на Apple Iphone XR, MobiSafe</div>
+                                        <div style="display: flex; align-items: center; gap: 16px;">
+                                            <div class="item-desc-text">Цвет: прозрачный</div>
+                                            <div class="item-desc-text">Размер: 56</div>
+                                        </div>
+                                        <div class="item-footer-text">Коледино WB</div>
+                                        <div class="item-footer-text" style="display: flex; align-items: center">ООО Мегапрофстиль  <img src="images/i.svg"></div>
+                                    </div>
+                                </label>
+
+                            </div>
+                            <div class="left-cart-item-func-container">
+                                <div class="left-cart-item-func">
+                                    <div class="stepper-container">
+                                        <div class="stepper">
+                                          <button class="decrement" for="stepper2" onclick="stepper(this)">-</button>
+                                          <input
+                                            type="number"
+                                            class="incrementor-input"
+                                            min="1"
+                                            max="1000"
+                                            step="1"
+                                            value="200"
+                                            id="stepper2"
+                                            readonly
+                                          />
+                                          <button class="increment" for="stepper2" onclick="stepper(this)">+</button>
+                                        </div>
+                                      </div>
+                                    <div class="left-cart-item-buttons">
+                                        <button class="img-button"><img src="images/like-button.svg" alt="like"></button>
+                                        <button class="img-button"><img src="images/delete-button.svg" alt="delete"></button>
+                                    </div>
+                                </div>
+                                <div class="item-price-container">
+                                    <div class="item-price">
+                                        <div class="item-price-text">
+                                            2100047
+                                        </div>
+                                        <div class="item-price-currency"> сом</div>
+                                    </div>
+                                    <div class="item-price-discount">
+                                        <span>2300047</span> сом
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                         <!-- item 3 -->
+                         <div class="left-cart-item">
+                          <div class="left-cart-item-desc-container ">
+                              <input type="checkbox" id="item1" name="item1" checked>
+                              <label for="item1" class="left-cart-item-desc-container">
+                                  <img class="item-img" src="images/item3.svg" alt="item image">
+                                  <div class="left-cart-item-desc">
+                                      <div class="item-title-text">Карандаши цветные Faber-Castell "Замок", набор 24 цвета, заточенные, шестигранные, Faber Castell</div>
+                                      <div class="item-footer-text">Коледино WB</div>
+                                      <div class="item-footer-text" style="display: flex; align-items: center">ООО Вайлдберриз  <img src="images/i.svg"></div>
+                                  </div>
+                              </label>
+
+                          </div>
+                          <div class="left-cart-item-func-container">
+                              <div class="left-cart-item-func">
+                                  <div class="stepper-container">
+                                      <div class="stepper">
+                                        <button class="decrement" for="stepper3" onclick="stepper(this)">-</button>
+                                        <input
+                                          type="number"
+                                          class="incrementor-input"
+                                          min="1"
+                                          max="2"
+                                          step="1"
+                                          value="2"
+                                          id="stepper3"
+                                          readonly
+                                        />
+                                        <button class="increment" for="stepper3" onclick="stepper(this)">+</button>
+                                      </div>
+                                    </div>
+                                  <div class="items-left-text">
+                                      Осталось 2 шт.
+                                  </div>
+                                  <div class="left-cart-item-buttons">
+                                      <button class="img-button"><img src="images/like-button.svg" alt="like"></button>
+                                      <button class="img-button"><img src="images/delete-button.svg" alt="delete"></button>
+                                  </div>
+                              </div>
+                              <div class="item-price-container">
+                                  <div class="item-price">
+                                      <div class="item-price-text">
+                                          494
+                                      </div>
+                                      <div class="item-price-currency"> сом</div>
+                                  </div>
+                                  <div class="item-price-discount">
+                                      <span>950</span> сом
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- right -->
+        <div class="right">sdf</div>
+    </main>
+    <footer>
+        © 2022 ООО «Товары и точка»
+    </footer>
+    <script src="scripts/stepper.js"></script>
+  </body>
+</html>
