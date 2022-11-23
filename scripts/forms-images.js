@@ -47,7 +47,6 @@ function checkCartItems() {
         dateDeliveryItem2.style.display = "flex"
     }
 
-
 }
 
 checkbox1.addEventListener('change', function () {
