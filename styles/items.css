@@ -161,7 +161,7 @@ button.img-button {
 }
 button.img-button:hover {
   filter: invert(36%) sepia(89%) saturate(2178%) hue-rotate(349deg)
-    brightness(99%) contrast(93%);
+    brightness(99%) contrast(93%) !important;
 }
 /* item buttons */
 
@@ -261,6 +261,8 @@ input::-webkit-inner-spin-button {
 /* missing items */
 #left-cart-items-missing {
   color: #a0a0a4;
+}
+#left-cart-items-missing .item-img {
   filter: grayscale(100%);
 }
 /* missing items */

@@ -8,13 +8,13 @@ const incrementBtn1 = document.getElementById("increment1")
 const incrementBtn2 = document.getElementById("increment2")
 const incrementBtn3 = document.getElementById("increment3")
 
-const num1 = checkbox1.checked ? parseInt(stepper1.getAttribute("value")) : 0
-const num2 = checkbox2.checked ? parseInt(stepper2.getAttribute("value")) : 0
-const num3 = checkbox3.checked ? parseInt(stepper3.getAttribute("value")) : 0
+const num1 = (checkbox1.checked && item1.style.display !== "none") ? parseInt(stepper1.getAttribute("value")) : 0
+const num2 = (checkbox2.checked && item2.style.display !== "none") ? parseInt(stepper2.getAttribute("value")) : 0
+const num3 = (checkbox3.checked && item3.style.display !== "none") ? parseInt(stepper3.getAttribute("value")) : 0
 
-const price1 = checkbox1.checked ? parseInt(priceTag1.innerText) : 0
-const price2 = checkbox2.checked ? parseInt(priceTag2.innerText) : 0
-const price3 = checkbox3.checked ? parseInt(priceTag3.innerText) : 0
+const price1 = (checkbox1.checked && item1.style.display !== "none") ? parseInt(priceTag1.innerText) : 0
+const price2 = (checkbox2.checked && item2.style.display !== "none") ? parseInt(priceTag2.innerText) : 0
+const price3 = (checkbox3.checked && item3.style.display !== "none") ? parseInt(priceTag3.innerText) : 0
 
 
 

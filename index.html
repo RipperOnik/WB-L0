@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles/style.css" />
     <link rel="stylesheet" href="styles/mobile_style.css" />
-    <link rel="stylesheet" href="styles/main_style.css" />
+    <link rel="stylesheet" href="styles/items.css" />
+    <link rel="stylesheet" href="styles/forms.css">
     <title>Document</title>
   </head>
   <body>
@@ -325,7 +326,76 @@
                   </div>
               </div>
           </div>
+          <!--forms-->
+          <div class="forms">
+            <!--delivery form-->
+            <div class="form-container">
+              <div class="form-main">
+                <div class="form-main-header">
+                  <div class="form-title">Способ доставки</div>
+                  <div class="form-text-button">Изменить</div>
+                </div>
+                <div class="form-main-content">
+                  <!-- Пункт выдачи-->
+                  <div class="form-main-content-item">
+                    <div class="form-main-content-item-label">
+                      Пункт выдачи
+                    </div>
+                      <div>
+                        <div id="address">Бишкек, улица Ахматбека Суюмбаева, 12/1</div> 
+                        <div> <img src="images/star.svg" alt="star"> 4.99   Ежедневно с 10 до 21</div>
+                      </div>
+                  </div>
+                  <!-- Стоимость доставки-->
+                  <div class="form-main-content-item">
+                    <div class="form-main-content-item-label">
+                      Стоимость доставки
+                    </div>
+                     Бесплатно
+                  </div>
+                  <!-- Дата доставки-->
+                  <div class="form-main-content-item" id="date-delivery-item1">
+                    <div class="form-main-content-item-label">
+                      5-6 февраля
+                    </div>
+                     <div class="form-main-content-item-images">
+                      <div class="img-container" id="item-img1">
+                        <img src="images/item1.svg" width="40px" height="56px" alt="item">
+                        <div class="cart-item-number" style="left: 75%; bottom: 85%; display: none;">1</div>
+                      </div>
+                      <div class="img-container" id="item-img2">
+                        <img src="images/item2.svg" width="40px" height="56px" alt="item">
+                        <div class="cart-item-number" style="left: 75%; bottom: 85%;">184</div>
+                      </div>
+                      <div class="img-container" id="item-img3">
+                        <img src="images/item3.svg" width="40px" height="56px" alt="item">
+                        <div class="cart-item-number" style="left: 75%; bottom: 85%;">2</div>
+                      </div>
+                     </div>
+                  </div>
+                  <!-- Дата доставки-->
+                  <div class="form-main-content-item" id="date-delivery-item2">
+                    <div class="form-main-content-item-label">
+                      7-8 февраля
+                    </div>
+                     <div class="form-main-content-item-images" >
+                      <div class="img-container" id="item-img2(1)">
+                        <img src="images/item2.svg" width="40px" height="56px" alt="item">
+                        <div class="cart-item-number" style="left: 75%; bottom: 85%;">16</div>
+                      </div>
+                     </div>
+                  </div>
+                </div>
+              </div>
+              <div class="form-footer">
+                <img src="images/price shipping.svg" alt="price shipping img"> Обратная доставка товаров на склад при отказе - <span style="color:#0CB477"> бесплатно</span>
+              </div>
+            </div>
+
+          </div>
+          
         </div>
+
         <!-- right -->
         <div class="right">right</div>
     </main>
@@ -334,6 +404,7 @@
     </footer>
     <script src="scripts/collapse-checkbox.js"></script>
     <script src="scripts/stepper.js"></script>
+    <script src="scripts/forms-images.js"></script>
     <script src="scripts/manageItems.js"></script>
   </body>
 </html>

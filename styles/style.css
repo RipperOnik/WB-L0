@@ -184,7 +184,7 @@ input[type="search"] {
   position: absolute;
   left: 52%;
   bottom: 75%;
-  width: 15px;
+  min-width: 15px;
   height: 16px;
   background: #f55123;
   border-radius: 16px;
