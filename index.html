@@ -73,8 +73,8 @@
                 <div class="left-cart-items">
                     <div class="left-cart-items-header">
                         <div style="display: flex; align-items:center; gap:15px;" id="left-cart-items-header-opened">
-                            <input type="checkbox" id="chooseAll" name="chooseAll" checked>
-                            <label for="chooseAll" class="left-items-title">Выбрать все</label>
+                            <input type="checkbox" id="checkbox-items-All" name="checkbox-items-All" checked>
+                            <label for="checkbox-items-All" class="left-items-title">Выбрать все</label>
                         </div>
                         <div class="left-items-title" id="left-cart-items-header-closed" style="display: none;"> <span id="items-number"></span> товаров <spa id="items-bill"></spa> сом</div>
                         <div class="arrow-button" onclick="collapse(this)" for="left-cart-items-main">
@@ -85,10 +85,10 @@
                     <hr>
                     <div class="left-cart-items-main" id="left-cart-items-main">
                         <!-- item 1 -->
-                        <div class="left-cart-item">
+                        <div class="left-cart-item" id="cart-item1">
                             <div class="left-cart-item-desc-container ">
-                                <input type="checkbox" id="item1" name="item1" checked>
-                                <label for="item1" class="left-cart-item-desc-container">
+                                <input type="checkbox" id="checkbox-item1" name="checkbox-item1" checked>
+                                <label for="checkbox-item1" class="left-cart-item-desc-container">
                                     <img class="item-img" src="images/item1.svg" alt="item image">
                                     <div class="left-cart-item-desc">
                                         <div class="item-title-text">Футболка UZcotton мужская</div>
@@ -125,7 +125,7 @@
                                     </div>
                                     <div class="left-cart-item-buttons">
                                         <button class="img-button"><img src="images/like-button.svg" alt="like"></button>
-                                        <button class="img-button"><img src="images/delete-button.svg" alt="delete"></button>
+                                        <button class="img-button"><img src="images/delete-button.svg" alt="delete" for="cart-item1" onclick="deleteItem(this)"></button>
                                     </div>
                                 </div>
                                 <div class="item-price-container">
@@ -142,10 +142,10 @@
                             </div>
                         </div>
                         <!-- item 2 -->
-                        <div class="left-cart-item">
+                        <div class="left-cart-item" id="cart-item2">
                             <div class="left-cart-item-desc-container ">
-                                <input type="checkbox" id="item2" name="item2" checked>
-                                <label for="item2" class="left-cart-item-desc-container">
+                                <input type="checkbox" id="checkbox-item2" name="checkbox-item2" checked>
+                                <label for="checkbox-item2" class="left-cart-item-desc-container">
                                     <img class="item-img" src="images/item2.svg" alt="item image">
                                     <div class="left-cart-item-desc">
                                         <div class="item-title-text">Силиконовый чехол картхолдер (отверстия) для карт, прозрачный кейс бампер на Apple Iphone XR, MobiSafe</div>
@@ -179,7 +179,7 @@
                                       </div>
                                     <div class="left-cart-item-buttons">
                                         <button class="img-button"><img src="images/like-button.svg" alt="like"></button>
-                                        <button class="img-button"><img src="images/delete-button.svg" alt="delete"></button>
+                                        <button class="img-button"><img src="images/delete-button.svg" alt="delete" for="cart-item2" onclick="deleteItem(this)"></button>
                                     </div>
                                 </div>
                                 <div class="item-price-container">
@@ -196,10 +196,10 @@
                             </div>
                         </div>
                          <!-- item 3 -->
-                         <div class="left-cart-item">
+                         <div class="left-cart-item" id="cart-item3">
                           <div class="left-cart-item-desc-container ">
-                              <input type="checkbox" id="item3" name="item3" checked>
-                              <label for="item3" class="left-cart-item-desc-container">
+                              <input type="checkbox" id="checkbox-item3" name="checkbox-item3" checked>
+                              <label for="checkbox-item3" class="left-cart-item-desc-container">
                                   <img class="item-img" src="images/item3.svg" alt="item image">
                                   <div class="left-cart-item-desc">
                                       <div class="item-title-text">Карандаши цветные Faber-Castell "Замок", набор 24 цвета, заточенные, шестигранные, Faber Castell</div>
@@ -232,7 +232,7 @@
                                   </div>
                                   <div class="left-cart-item-buttons">
                                       <button class="img-button"><img src="images/like-button.svg" alt="like"></button>
-                                      <button class="img-button"><img src="images/delete-button.svg" alt="delete"></button>
+                                      <button class="img-button"><img src="images/delete-button.svg" alt="delete" for="cart-item3" onclick="deleteItem(this)"></button>
                                   </div>
                               </div>
                               <div class="item-price-container">
@@ -264,7 +264,7 @@
                   <hr>
                   <div class="left-cart-items-main" id="left-cart-items-missing">
                       <!-- item 1 -->
-                      <div class="left-cart-item">
+                      <div class="left-cart-item" id="missing-item1">
                           <div class="left-cart-item-desc-container ">
                                   <img class="item-img" src="images/item1.svg" alt="item image">
                                   <div class="left-cart-item-desc">
@@ -279,13 +279,13 @@
                               <div class="left-cart-item-func">
                                   <div class="left-cart-item-buttons">
                                       <button class="img-button"><img src="images/like-button.svg" alt="like"></button>
-                                      <button class="img-button"><img src="images/delete-button.svg" alt="delete"></button>
+                                      <button class="img-button"><img src="images/delete-button.svg" alt="delete" for="missing-item1" onclick="deleteItem(this)"></button>
                                   </div>
                               </div>
                           </div>
                       </div>
                       <!-- item 2 -->
-                      <div class="left-cart-item">
+                      <div class="left-cart-item" id="missing-item2">
                           <div class="left-cart-item-desc-container ">
                                   <img class="item-img" src="images/item2.svg" alt="item image">
                                   <div class="left-cart-item-desc">
@@ -300,13 +300,13 @@
                               <div class="left-cart-item-func">
                                   <div class="left-cart-item-buttons">
                                       <button class="img-button"><img src="images/like-button.svg" alt="like"></button>
-                                      <button class="img-button"><img src="images/delete-button.svg" alt="delete"></button>
+                                      <button class="img-button"><img src="images/delete-button.svg" alt="delete" for="missing-item2" onclick="deleteItem(this)"></button>
                                   </div>
                               </div>
                           </div>
                       </div>
                        <!-- item 3 -->
-                       <div class="left-cart-item">
+                       <div class="left-cart-item" id="missing-item3">
                         <div class="left-cart-item-desc-container ">
                                 <img class="item-img" src="images/item3.svg" alt="item image">
                                 <div class="left-cart-item-desc">
@@ -317,7 +317,7 @@
                             <div class="left-cart-item-func">
                                 <div class="left-cart-item-buttons">
                                     <button class="img-button"><img src="images/like-button.svg" alt="like"></button>
-                                    <button class="img-button"><img src="images/delete-button.svg" alt="delete"></button>
+                                    <button class="img-button"><img src="images/delete-button.svg" alt="delete" for="missing-item3" onclick="deleteItem(this)"></button>
                                 </div>
                             </div>
                         </div>
@@ -334,5 +334,6 @@
     </footer>
     <script src="scripts/collapse-checkbox.js"></script>
     <script src="scripts/stepper.js"></script>
+    <script src="scripts/manageItems.js"></script>
   </body>
 </html>

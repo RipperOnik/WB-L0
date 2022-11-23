@@ -12,10 +12,13 @@ const stepper2 = document.getElementById("stepper2")
 const stepper3 = document.getElementById("stepper3")
 const itemsNumber = document.getElementById("items-number")
 const itemsBill = document.getElementById("items-bill")
-const checkbox1 = document.getElementById("item1")
-const checkbox2 = document.getElementById("item2")
-const checkbox3 = document.getElementById("item3")
-const checkboxAll = document.getElementById("chooseAll")
+const checkbox1 = document.getElementById("checkbox-item1")
+const checkbox2 = document.getElementById("checkbox-item2")
+const checkbox3 = document.getElementById("checkbox-item3")
+const checkboxAll = document.getElementById("checkbox-items-All")
+const item1 = document.getElementById("cart-item1")
+const item2 = document.getElementById("cart-item2")
+const item3 = document.getElementById("cart-item3")
 
 
 
@@ -25,13 +28,13 @@ const checkboxAll = document.getElementById("chooseAll")
 
 
 function calculatePriceAndAmount() {
-    const num1 = checkbox1.checked ? parseInt(stepper1.getAttribute("value")) : 0
-    const num2 = checkbox2.checked ? parseInt(stepper2.getAttribute("value")) : 0
-    const num3 = checkbox3.checked ? parseInt(stepper3.getAttribute("value")) : 0
+    const num1 = (checkbox1.checked && item1.style.display !== "none") ? parseInt(stepper1.getAttribute("value")) : 0
+    const num2 = (checkbox2.checked && item2.style.display !== "none") ? parseInt(stepper2.getAttribute("value")) : 0
+    const num3 = (checkbox3.checked && item3.style.display !== "none") ? parseInt(stepper3.getAttribute("value")) : 0
 
-    const price1 = checkbox1.checked ? parseInt(priceTag1.innerText) : 0
-    const price2 = checkbox2.checked ? parseInt(priceTag2.innerText) : 0
-    const price3 = checkbox3.checked ? parseInt(priceTag3.innerText) : 0
+    const price1 = (checkbox1.checked && item1.style.display !== "none") ? parseInt(priceTag1.innerText) : 0
+    const price2 = (checkbox2.checked && item2.style.display !== "none") ? parseInt(priceTag2.innerText) : 0
+    const price3 = (checkbox3.checked && item3.style.display !== "none") ? parseInt(priceTag3.innerText) : 0
 
 
     itemsNumber.innerText = num1 + num2 + num3

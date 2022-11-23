@@ -1,6 +1,4 @@
-// const stepper1 = document.getElementById("stepper1")
-// const stepper2 = document.getElementById("stepper2")
-// const stepper3 = document.getElementById("stepper3")
+
 
 const decrementBtn1 = document.getElementById("decrement1")
 const decrementBtn2 = document.getElementById("decrement2")
@@ -10,17 +8,6 @@ const incrementBtn1 = document.getElementById("increment1")
 const incrementBtn2 = document.getElementById("increment2")
 const incrementBtn3 = document.getElementById("increment3")
 
-// const priceTag1 = document.getElementById("price1")
-// const priceTag2 = document.getElementById("price2")
-// const priceTag3 = document.getElementById("price3")
-
-// const num1 = parseInt(stepper1.getAttribute("value"))
-// const num2 = parseInt(stepper2.getAttribute("value"))
-// const num3 = parseInt(stepper3.getAttribute("value"))
-
-// const price1 = parseInt(priceTag1.innerText) / num1
-// const price2 = parseInt(priceTag2.innerText) / num2
-// const price3 = parseInt(priceTag3.innerText) / num3
 const num1 = checkbox1.checked ? parseInt(stepper1.getAttribute("value")) : 0
 const num2 = checkbox2.checked ? parseInt(stepper2.getAttribute("value")) : 0
 const num3 = checkbox3.checked ? parseInt(stepper3.getAttribute("value")) : 0
