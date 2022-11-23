@@ -79,6 +79,12 @@ input[type="checkbox"] {
   padding: 12px 0px 0px;
   gap: 16px;
 }
+.left-cart-item-desc-uniter {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 16px;
+}
 .left-cart-item-desc {
   display: flex;
   flex-direction: column;

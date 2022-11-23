@@ -1,0 +1,128 @@
+.popup-container {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(1.1);
+  transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
+}
+
+.popup {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  isolation: isolate;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 16px;
+  width: 500px;
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 16px;
+}
+.popup-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 24px 13px;
+  font-weight: 700;
+  width: 100%;
+  font-size: 20px;
+  line-height: 28px;
+  letter-spacing: -0.01em;
+}
+
+.close-button {
+  border: none;
+  cursor: pointer;
+  background: transparent;
+}
+/* tabs */
+.popup-tabs {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  align-items: center;
+  padding: 0px 24px;
+  gap: 8px;
+  margin-bottom: 26px;
+}
+.popup-tab {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex: 1 1 0;
+  height: 36px;
+  border: 2px solid rgba(203, 17, 171, 0.15);
+  border-radius: 20px;
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 16px;
+}
+/* tabs */
+.popup-content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: flex-start;
+  padding: 0px 24px 33px;
+  gap: 8px;
+}
+.popup-content-item {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 8px;
+  justify-content: space-between;
+}
+.popup-content-item-radio {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  gap: 8px;
+}
+.popup-content-item-desc {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 4px;
+}
+.popup-content-item-footer {
+  font-size: 13px;
+  line-height: 16px;
+
+  color: #a0a0a4;
+}
+
+.close-button:hover {
+  background-color: darkgray;
+}
+
+input[type="radio"] {
+  width: 16px;
+  height: 16px;
+  accent-color: #cb11ab;
+}
+/* This will blur the screen and make the popup visible  */
+.show-popup {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1);
+  transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
+}
