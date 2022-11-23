@@ -9,10 +9,12 @@ body {
 }
 main {
   background: #f6f6f6;
-  min-height: 100vh;
+  min-height: 80vh;
   border-radius: 24px;
   padding-top: 24px;
   padding-bottom: 24px;
+  display: flex;
+  flex-direction: row;
 }
 footer {
   height: 88px;

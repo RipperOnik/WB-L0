@@ -21,6 +21,13 @@ const incrementBtn3 = document.getElementById("increment3")
 // const price1 = parseInt(priceTag1.innerText) / num1
 // const price2 = parseInt(priceTag2.innerText) / num2
 // const price3 = parseInt(priceTag3.innerText) / num3
+const num1 = checkbox1.checked ? parseInt(stepper1.getAttribute("value")) : 0
+const num2 = checkbox2.checked ? parseInt(stepper2.getAttribute("value")) : 0
+const num3 = checkbox3.checked ? parseInt(stepper3.getAttribute("value")) : 0
+
+const price1 = checkbox1.checked ? parseInt(priceTag1.innerText) : 0
+const price2 = checkbox2.checked ? parseInt(priceTag2.innerText) : 0
+const price3 = checkbox3.checked ? parseInt(priceTag3.innerText) : 0
 
 
 
@@ -101,13 +108,17 @@ function stepper(btn) {
     const calcStep = (id == "increment") ? (step * 1) : (step * -1);
     const newValue = parseInt(val) + calcStep;
 
+    // if the number of items is within boundaries, then set the new value and manage buttons 
+    // if not, return, don't calculate the price 
     if (newValue >= min && newValue <= max) {
         myInput.setAttribute("value", newValue);
+        manageButtons()
     }
-    manageButtons()
+    else {
+        return
+    }
     let priceStep
     let priceTag
-    console.log(inputId);
     if (inputId === "stepper1") {
         priceStep = price1 / num1
         priceTag = priceTag1
@@ -122,8 +133,6 @@ function stepper(btn) {
         priceTag = priceTag3
     }
     priceStep = (id == "increment") ? (priceStep * 1) : (priceStep * -1);
-    console.log(priceStep)
-    console.log(priceTag);
     priceTag.innerText = Math.round(parseInt(priceTag.innerText) + priceStep)
 
 }

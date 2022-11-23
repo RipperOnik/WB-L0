@@ -68,6 +68,7 @@
         <!-- left -->
         <div class="left">
             <div class="left-title">Корзина</div>
+            <!--Cart Items-->
             <div class="left-cart-container">
                 <div class="left-cart-items">
                     <div class="left-cart-items-header">
@@ -250,9 +251,83 @@
                     </div>
                 </div>
             </div>
+            <!--Missing Items-->
+            <div class="left-cart-container">
+              <div class="left-cart-items">
+                  <div class="left-cart-items-header">
+                      <div class="left-items-title" id="left-cart-items-header"> Отсутствуют 3 товара</div>
+                      <div class="arrow-button" onclick="collapse(this)" for="left-cart-items-missing">
+                          <svg id="opened-missing" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#8A898E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-up"><polyline points="18 15 12 9 6 15"></polyline></svg>
+                          <svg id="closed-missing" style="display: none;" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#8A898E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                      </div>
+                  </div>
+                  <hr>
+                  <div class="left-cart-items-main" id="left-cart-items-missing">
+                      <!-- item 1 -->
+                      <div class="left-cart-item">
+                          <div class="left-cart-item-desc-container ">
+                                  <img class="item-img" src="images/item1.svg" alt="item image">
+                                  <div class="left-cart-item-desc">
+                                      <div class="item-title-text">Футболка UZcotton мужская</div>
+                                      <div style="display: flex; align-items: center; gap: 16px;">
+                                          <div class="item-desc-text">Цвет: белый</div>
+                                          <div class="item-desc-text">Размер: 56</div>
+                                      </div>
+                                  </div>
+                          </div>
+                          <div class="left-cart-item-func-container">
+                              <div class="left-cart-item-func">
+                                  <div class="left-cart-item-buttons">
+                                      <button class="img-button"><img src="images/like-button.svg" alt="like"></button>
+                                      <button class="img-button"><img src="images/delete-button.svg" alt="delete"></button>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                      <!-- item 2 -->
+                      <div class="left-cart-item">
+                          <div class="left-cart-item-desc-container ">
+                                  <img class="item-img" src="images/item2.svg" alt="item image">
+                                  <div class="left-cart-item-desc">
+                                      <div class="item-title-text">Силиконовый чехол картхолдер (отверстия) для карт, прозрачный кейс бампер на Apple Iphone XR, MobiSafe</div>
+                                      <div style="display: flex; align-items: center; gap: 16px;">
+                                          <div class="item-desc-text">Цвет: прозрачный</div>
+                                          <div class="item-desc-text">Размер: 56</div>
+                                      </div>
+                                  </div>
+                          </div>
+                          <div class="left-cart-item-func-container">
+                              <div class="left-cart-item-func">
+                                  <div class="left-cart-item-buttons">
+                                      <button class="img-button"><img src="images/like-button.svg" alt="like"></button>
+                                      <button class="img-button"><img src="images/delete-button.svg" alt="delete"></button>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                       <!-- item 3 -->
+                       <div class="left-cart-item">
+                        <div class="left-cart-item-desc-container ">
+                                <img class="item-img" src="images/item3.svg" alt="item image">
+                                <div class="left-cart-item-desc">
+                                    <div class="item-title-text">Карандаши цветные Faber-Castell "Замок", набор 24 цвета, заточенные, шестигранные, Faber Castell</div>
+                                </div>
+                        </div>
+                        <div class="left-cart-item-func-container">
+                            <div class="left-cart-item-func">
+                                <div class="left-cart-item-buttons">
+                                    <button class="img-button"><img src="images/like-button.svg" alt="like"></button>
+                                    <button class="img-button"><img src="images/delete-button.svg" alt="delete"></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+              </div>
+          </div>
         </div>
         <!-- right -->
-        <div class="right">sdf</div>
+        <div class="right">right</div>
     </main>
     <footer>
         © 2022 ООО «Товары и точка»
