@@ -5,6 +5,7 @@ const tabIssue = document.getElementById("issue-points-tab")
 const tabCourier = document.getElementById("courier-tab")
 const addressField = document.getElementById("address")
 const ratingField = document.getElementById("rating")
+const deliverybuttonOk = document.getElementById("button-ok")
 function togglePopup() {
     deliveryPopupContainer.classList.toggle("show-popup");
 }
@@ -16,7 +17,7 @@ function windowOnClick(event) {
 }
 
 
-function closePopupHandler() {
+function chooseAddress() {
     togglePopup()
     if (document.querySelector(".popup-tab-active") === tabIssue) {
         const radio = document.querySelector('input[name="issue-point"]:checked')
@@ -37,6 +38,8 @@ function closePopupHandler() {
 
 
 
-deliveryPopupButton.addEventListener("click", togglePopup);
-deliveryCloseButton.addEventListener("click", closePopupHandler);
-window.addEventListener("click", windowOnClick);
+deliveryPopupButton.addEventListener("click", togglePopup)
+deliveryCloseButton.addEventListener("click", togglePopup)
+deliverybuttonOk.addEventListener("click", chooseAddress)
+
+window.addEventListener("click", windowOnClick)
