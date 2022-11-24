@@ -360,7 +360,7 @@
                     </div>
                       <div>
                         <div id="address">Бишкек, улица Ахматбека Суюмбаева, 12/1</div> 
-                        <div> <img src="images/star.svg" alt="star"> 4.99   Ежедневно с 10 до 21</div>
+                        <div> <img src="images/star.svg" alt="star"> <span id="rating">4.99</span>  Ежедневно с 10 до 21</div>
                       </div>
                   </div>
                   <!-- Стоимость доставки-->
@@ -423,42 +423,78 @@
           Способ оплаты
           <button class="close-button" id="delivery-popup-close-button"> <img src="images/close-button.svg" alt="close-button"></button>
         </div>
+        <!--tabs-->
         <div class="popup-tabs">
-          <div class="popup-tab">
+          <div class="popup-tab popup-tab-active" id="issue-points-tab" for="issue-points-option" onclick="switchTab(this)">
             В пункт выдачи
           </div>
-          <div class="popup-tab">
+          <div class="popup-tab" id="courier-tab" for="courier-option" onclick="switchTab(this)">
             Курьером
           </div>
         </div>
-        <div class="popup-content">
+        <!--Issue points-->
+        <div class="popup-content" id="issue-points-option">
           Мои адреса
-            <div class="popup-content-item">
+            <div class="popup-content-item" id="popup-issue-point-item1">
               <div class="popup-content-item-radio">
-                <input type="radio" id="delivery-radio1" name="delivery-radio" value="delivery-radio1" checked >
+                <input type="radio" id="issue-point1" name="issue-point" value="Бишкек, улица Ахматбека Суюмбаева, 12/1 $$$ 4.99" checked >
                 <label for="delivery-radio1">
-                    г. Бишкек, микрорайон Джал, улица Ахунбаева Исы, д. 67/1
+                  Бишкек, улица Ахматбека Суюмбаева, 12/1
                     <div> <img src="images/star.svg" alt="star"> 4.99  <span class="popup-content-item-footer"> Пункт выдачи</span> </div>
                 </label>
               </div>
+              <button class="img-button"><img src="images/delete-button.svg" alt="delete" for="popup-issue-point-item1" onclick="deleteItem(this)"></button>
           </div>
-          <div class="popup-content-item">
+          <div class="popup-content-item" id="popup-issue-point-item2">
               <div class="popup-content-item-radio">
-                <input type="radio" id="delivery-radio2" name="delivery-radio" value="delivery-radio2">
+                <input type="radio" id="issue-point2" name="issue-point" value="г. Бишкек, микрорайон Джал, улица Ахунбаева Исы, д. 67/1 $$$ 4.99">
                 <label for="delivery-radio2">
                     г. Бишкек, микрорайон Джал, улица Ахунбаева Исы, д. 67/1
                     <div> <img src="images/star.svg" alt="star"> 4.99  <span class="popup-content-item-footer"> Пункт выдачи</span> </div>
                 </label>
               </div>
+              <button class="img-button"><img src="images/delete-button.svg" alt="delete" for="popup-issue-point-item2" onclick="deleteItem(this)"></button>
           </div>
-          <div class="popup-content-item">
+          <div class="popup-content-item" id="popup-issue-point-item3">
               <div class="popup-content-item-radio">
-                <input type="radio" id="delivery-radio3" name="delivery-radio" value="delivery-radio3">
+                <input type="radio" id="issue-point3" name="issue-point" value="г. Бишкек, улица Табышалиева, д. 57 $$$ 4.99">
                 <label for="delivery-radio3">
                     г. Бишкек, улица Табышалиева, д. 57
                     <div> <img src="images/star.svg" alt="star"> 4.99  <span class="popup-content-item-footer"> Пункт выдачи</span> </div>
                 </label>
               </div>
+              <button class="img-button"><img src="images/delete-button.svg" alt="delete" for="popup-issue-point-item3" onclick="deleteItem(this)"></button>
+          </div>
+        </div>
+        <!--Courier-->
+        <div class="popup-content" id="courier-option" style="display: none">
+          Мои адреса
+            <div class="popup-content-item" id="popup-courier-item1">
+              <div class="popup-content-item-radio">
+                <input type="radio" id="courier-address1" name="courier-address" value="Бишкек, улица Табышалиева, 57" checked >
+                <label for="delivery-radio1">
+                  Бишкек, улица Табышалиева, 57
+                </label>
+              </div>
+              <button class="img-button"><img src="images/delete-button.svg" alt="delete" for="popup-courier-item1" onclick="deleteItem(this)"></button>
+          </div>
+          <div class="popup-content-item" id="popup-courier-item2">
+              <div class="popup-content-item-radio">
+                <input type="radio" id="courier-address2" name="courier-address" value="г. Бишкек, улица Жукеева-Пудовника, 77/1">
+                <label for="delivery-radio2">
+                    г. Бишкек, улица Жукеева-Пудовника, 77/1
+                </label>
+              </div>
+              <button class="img-button"><img src="images/delete-button.svg" alt="delete" for="popup-courier-item2" onclick="deleteItem(this)"></button>
+          </div>
+          <div class="popup-content-item" id="popup-courier-item3">
+              <div class="popup-content-item-radio">
+                <input type="radio" id="courier-address3" name="courier-address" value="г. Бишкек, микрорайон Джал, улица Ахунбаева Исы, 67/1">
+                <label for="delivery-radio3">
+                    г. Бишкек, микрорайон Джал, улица Ахунбаева Исы, 67/1
+                </label>
+              </div>
+              <button class="img-button"><img src="images/delete-button.svg" alt="delete" for="popup-courier-item3" onclick="deleteItem(this)"></button>
           </div>
            
         </div>
@@ -473,5 +509,6 @@
     <script src="scripts/forms-images.js"></script>
     <script src="scripts/manageItems.js"></script>
     <script src="scripts/popup.js"></script>
+    <script src="scripts/tab-switch.js"></script>
   </body>
 </html>
