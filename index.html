@@ -409,18 +409,34 @@
               </div>
             </div>
 
+            <!--payment form-->
+            <div class="form-container">
+              <div class="form-main">
+                <div class="form-main-header">
+                  <div class="form-title">Способ оплаты</div>
+                  <button class="form-text-button" id="payment-popup-button">Изменить</button>
+                </div>
+                <div class="form-main-content">
+                  <div class="payment-card">
+                    <img src="images/payment/mir.svg" alt="payment card" id="card-img"> 
+                     <span id="card-number">1234 56** **** 1234</span> <span id="card-expiration-date">01/30</span>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
           </div>
-          
         </div>
 
         <!-- right -->
         <div class="right">right</div>
     </main>
-    <!-- popup -->
+    <!-- popup delivery-->
     <div class="popup-container" id="delivery-popup-container">
       <div class="popup">
         <div class="popup-header">
-          Способ оплаты
+          Способ доставки
           <button class="close-button" id="delivery-popup-close-button"> <img src="images/close-button.svg" alt="close-button"></button>
         </div>
         <!--tabs-->
@@ -447,9 +463,9 @@
           </div>
           <div class="popup-content-item" id="popup-issue-point-item2">
               <div class="popup-content-item-radio">
-                <input type="radio" id="issue-point2" name="issue-point" value="г. Бишкек, микрорайон Джал, улица Ахунбаева Исы, д. 67/1 $$$ 4.99">
+                <input type="radio" id="issue-point2" name="issue-point" value="Бишкек, микрорайон Джал, улица Ахунбаева Исы, д. 67/1 $$$ 4.99">
                 <label for="delivery-radio2">
-                    г. Бишкек, микрорайон Джал, улица Ахунбаева Исы, д. 67/1
+                    Бишкек, микрорайон Джал, улица Ахунбаева Исы, д. 67/1
                     <div> <img src="images/star.svg" alt="star"> 4.99  <span class="popup-content-item-footer"> Пункт выдачи</span> </div>
                 </label>
               </div>
@@ -457,9 +473,9 @@
           </div>
           <div class="popup-content-item" id="popup-issue-point-item3">
               <div class="popup-content-item-radio">
-                <input type="radio" id="issue-point3" name="issue-point" value="г. Бишкек, улица Табышалиева, д. 57 $$$ 4.99">
+                <input type="radio" id="issue-point3" name="issue-point" value="Бишкек, улица Табышалиева, д. 57 $$$ 4.99">
                 <label for="delivery-radio3">
-                    г. Бишкек, улица Табышалиева, д. 57
+                    Бишкек, улица Табышалиева, д. 57
                     <div> <img src="images/star.svg" alt="star"> 4.99  <span class="popup-content-item-footer"> Пункт выдачи</span> </div>
                 </label>
               </div>
@@ -480,27 +496,90 @@
           </div>
           <div class="popup-content-item" id="popup-courier-item2">
               <div class="popup-content-item-radio">
-                <input type="radio" id="courier-address2" name="courier-address" value="г. Бишкек, улица Жукеева-Пудовника, 77/1">
+                <input type="radio" id="courier-address2" name="courier-address" value="Бишкек, улица Жукеева-Пудовника, 77/1">
                 <label for="delivery-radio2">
-                    г. Бишкек, улица Жукеева-Пудовника, 77/1
+                    Бишкек, улица Жукеева-Пудовника, 77/1
                 </label>
               </div>
               <button class="img-button"><img src="images/delete-button.svg" alt="delete" for="popup-courier-item2" onclick="deleteItem(this)"></button>
           </div>
           <div class="popup-content-item" id="popup-courier-item3">
               <div class="popup-content-item-radio">
-                <input type="radio" id="courier-address3" name="courier-address" value="г. Бишкек, микрорайон Джал, улица Ахунбаева Исы, 67/1">
+                <input type="radio" id="courier-address3" name="courier-address" value="Бишкек, микрорайон Джал, улица Ахунбаева Исы, 67/1">
                 <label for="delivery-radio3">
-                    г. Бишкек, микрорайон Джал, улица Ахунбаева Исы, 67/1
+                    Бишкек, микрорайон Джал, улица Ахунбаева Исы, 67/1
                 </label>
               </div>
               <button class="img-button"><img src="images/delete-button.svg" alt="delete" for="popup-courier-item3" onclick="deleteItem(this)"></button>
           </div>
         </div>
-        <button id="button-ok" class="button-ok">Выбрать</button>
+        <button id="delivery-button-ok" class="button-ok">Выбрать</button>
         
       </div>
     </div>
+    <!-- popup payment-->
+    <div class="popup-container" id="payment-popup-container">
+      <div class="popup">
+        <div class="popup-header">
+          Способ оплаты
+          <button class="close-button" id="payment-popup-close-button"> <img src="images/close-button.svg" alt="close-button"></button>
+        </div>
+        <!--payment cards-->
+        <div class="popup-content" id="courier-option">
+          <!--card-->
+          <div class="popup-content-item" id="popup-courier-item1">
+            <div class="popup-content-item-radio">
+              <input type="radio" id="radio-card1" name="card" value="1234 56** **** 1234 $$$ mir" checked >
+              <label for="radio-card1">
+                <div class="payment-card">
+                  <img src="images/payment/mir.svg" alt="payment card" id="card-img"> 
+                    <span id="card-number-radio1">1234 56** **** 1234</span> 
+                </div>
+              </label>
+            </div>
+          </div>
+          <!--card-->
+          <div class="popup-content-item" id="popup-courier-item1">
+            <div class="popup-content-item-radio">
+              <input type="radio" id="radio-card2" name="card" value="1234 56** **** 1234 $$$ visa">
+              <label for="radio-card2">
+                <div class="payment-card">
+                  <img src="images/payment/visa.svg" alt="payment card" id="card-img"> 
+                    <span id="card-number-radio2">1234 56** **** 1234</span> 
+                </div>
+              </label>
+            </div>
+          </div>
+          <!--card-->
+          <div class="popup-content-item" id="popup-courier-item1">
+            <div class="popup-content-item-radio">
+              <input type="radio" id="radio-card3" name="card" value="1234 56** **** 1234 $$$ mastercard" >
+              <label for="radio-card3">
+                <div class="payment-card">
+                  <img src="images/payment/mastercard.svg" alt="payment card" id="card-img"> 
+                    <span id="card-number-radio3">1234 56** **** 1234</span> 
+                </div>
+              </label>
+            </div>
+          </div>
+          <!--card-->
+          <div class="popup-content-item" id="popup-courier-item1">
+            <div class="popup-content-item-radio">
+              <input type="radio" id="radio-card4" name="card" value="1234 56** **** 1234 $$$ maestro">
+              <label for="radio-card4">
+                <div class="payment-card">
+                  <img src="images/payment/maestro.svg" alt="payment card" id="card-img"> 
+                    <span id="card-number-radio4">1234 56** **** 1234</span> 
+                </div>
+              </label>
+            </div>
+          </div>
+        </div>
+        <button id="payment-button-ok" class="button-ok">Выбрать</button>
+        
+      </div>
+    </div>
+
     <footer>
         © 2022 ООО «Товары и точка»
     </footer>
