@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="styles/items.css" />
     <link rel="stylesheet" href="styles/forms.css">
     <link rel="stylesheet" href="styles/popup.css">
+    <link rel="stylesheet" href="styles/fonts.css">
     <title>Document</title>
   </head>
   <body>
@@ -69,49 +70,49 @@
     <main>
         <!-- left -->
         <div class="left">
-            <div class="left-title">Корзина</div>
+            <div class="left__title">Корзина</div>
             <!--Cart Items-->
-            <div class="left-cart-container">
-                <div class="left-cart-items">
-                    <div class="left-cart-items-header">
-                        <div style="display: flex; align-items:center; gap:15px;" id="left-cart-items-header-opened">
+            <div class="cart">
+                <div class="cart__items">
+                    <div class="cart__items__header">
+                        <div style="display: flex; align-items:center; gap:15px;" id="cart__items__header--opened">
                             <input type="checkbox" id="checkbox-items-All" name="checkbox-items-All" checked>
                             <label for="checkbox-items-All" class="left-items-title">Выбрать все</label>
                         </div>
-                        <div class="left-items-title" id="left-cart-items-header-closed" style="display: none;"> <span id="items-number"></span> товаров <spa id="items-bill"></spa> сом</div>
-                        <div class="arrow-button" onclick="collapse(this)" for="left-cart-items-main">
+                        <div id="cart__items__header--closed" style="display: none;"> <span id="items-number"></span> товаров <spa id="items-bill"></spa> сом</div>
+                        <div class="arrow-button" onclick="collapse(this)" data-for="cart__items__main">
                             <svg id="opened" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#8A898E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-up"><polyline points="18 15 12 9 6 15"></polyline></svg>
                             <svg id="closed" style="display: none;" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#8A898E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg>
                         </div>
                     </div>
                     <hr>
-                    <div class="left-cart-items-main" id="left-cart-items-main">
+                    <div class="cart__items__main" id="cart__items__main">
                         <!-- item 1 -->
-                        <div class="left-cart-item" id="cart-item1">
-                            <div class="left-cart-item-desc-container ">
+                        <div class="cart-item" id="cart-item1">
+                            <div class="checkbox-container">
                                 <input type="checkbox" id="checkbox-item1" name="checkbox-item1" checked>
-                                <label for="checkbox-item1" class="left-cart-item-desc-container">
-                                  <div class="left-cart-item-desc-uniter">
+                                <label for="checkbox-item1" class="checkbox-container">
+                                  <div class="cart-item__desc-uniter">
                                     <img class="item-img" src="images/item1.svg" alt="item image">
-                                    <div class="left-cart-item-desc">
-                                        <div class="item-title-text">Футболка UZcotton мужская</div>
+                                    <div class="cart-item__desc">
+                                        <div class="cart-item__desc__title">Футболка UZcotton мужская</div>
                                         <div style="display: flex; align-items: center; gap: 16px;">
-                                            <div class="item-desc-text">Цвет: белый</div>
-                                            <div class="item-desc-text">Размер: 56</div>
+                                            <div class="cart-item__desc__text">Цвет: белый</div>
+                                            <div class="cart-item__desc__text">Размер: 56</div>
                                         </div>
-                                        <div class="item-footer-text">Коледино WB</div>
-                                        <div class="item-footer-text" style="display: flex; align-items: center">ООО Вайлдберриз  <img src="images/i.svg"></div>
+                                        <div class="cart-item__footer__text">Коледино WB</div>
+                                        <div class="cart-item__footer__text" style="display: flex; align-items: center">ООО Вайлдберриз  <img src="images/i.svg"></div>
                                     </div>
                                   </div>
                                   
                                 </label>
 
                             </div>
-                            <div class="left-cart-item-func-container">
-                                <div class="left-cart-item-func">
+                            <div class="cart-item__func-container">
+                                <div class="cart-item__func">
                                     <div class="stepper-container">
                                         <div class="stepper">
-                                          <button class="decrement" for="stepper1" id="decrement1" onclick="stepper(this)">-</button>
+                                          <button class="decrement" data-for="stepper1" id="decrement1" onclick="stepper(this)">-</button>
                                           <input
                                             type="number"
                                             class="incrementor-input"
@@ -122,56 +123,56 @@
                                             id="stepper1"
                                             readonly
                                           />
-                                          <button class="increment" for="stepper1" id="increment1" onclick="stepper(this)">+</button>
+                                          <button class="increment" data-for="stepper1" id="increment1" onclick="stepper(this)">+</button>
                                         </div>
                                       </div>
-                                    <div class="items-left-text">
+                                    <div class="cart-item__func__text">
                                         Осталось 2 шт.
                                     </div>
-                                    <div class="left-cart-item-buttons">
+                                    <div class="cart-item__func__buttons">
                                         <button class="img-button"><img src="images/like-button.svg" alt="like"></button>
-                                        <button class="img-button"><img src="images/delete-button.svg" alt="delete" for="cart-item1" onclick="deleteItem(this)"></button>
+                                        <button class="img-button"><img src="images/delete-button.svg" alt="delete" data-for="cart-item1" onclick="deleteItem(this)"></button>
                                     </div>
                                 </div>
-                                <div class="item-price-container">
-                                    <div class="item-price">
-                                        <div class="item-price-text" id="price1">
+                                <div class="cart-item__price">
+                                    <div class="cart-item__price__text">
+                                        <div class="cart-item__price__text--big" id="price1">
                                             522
                                         </div>
-                                        <div class="item-price-currency"> сом</div>
+                                        <div class="cart-item__price__text--small"> сом</div>
                                     </div>
-                                    <div class="item-price-discount">
+                                    <div class="cart-item__price__text--grey">
                                         <span id="initial-price1">1051</span> сом
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <!-- item 2 -->
-                        <div class="left-cart-item" id="cart-item2">
-                            <div class="left-cart-item-desc-container ">
+                        <div class="cart-item" id="cart-item2">
+                            <div class="checkbox-container">
                                 <input type="checkbox" id="checkbox-item2" name="checkbox-item2" checked>
-                                <label for="checkbox-item2" class="left-cart-item-desc-container">
-                                  <div class="left-cart-item-desc-uniter">
+                                <label for="checkbox-item2" class="checkbox-container">
+                                  <div class="cart-item__desc-uniter">
                                     <img class="item-img" src="images/item2.svg" alt="item image">
-                                    <div class="left-cart-item-desc">
-                                        <div class="item-title-text">Силиконовый чехол картхолдер (отверстия) для карт, прозрачный кейс бампер на Apple Iphone XR, MobiSafe</div>
+                                    <div class="cart-item__desc">
+                                        <div class="cart-item__desc__title">Силиконовый чехол картхолдер (отверстия) для карт, прозрачный кейс бампер на Apple Iphone XR, MobiSafe</div>
                                         <div style="display: flex; align-items: center; gap: 16px;">
-                                            <div class="item-desc-text">Цвет: прозрачный</div>
-                                            <div class="item-desc-text">Размер: 56</div>
+                                            <div class="cart-item__desc__text">Цвет: прозрачный</div>
+                                            <div class="cart-item__desc__text">Размер: 56</div>
                                         </div>
-                                        <div class="item-footer-text">Коледино WB</div>
-                                        <div class="item-footer-text" style="display: flex; align-items: center">ООО Мегапрофстиль  <img src="images/i.svg"></div>
+                                        <div class="cart-item__footer__text">Коледино WB</div>
+                                        <div class="cart-item__footer__text" style="display: flex; align-items: center">ООО Мегапрофстиль  <img src="images/i.svg"></div>
                                     </div>
                                   </div>
                                   
                                 </label>
 
                             </div>
-                            <div class="left-cart-item-func-container">
-                                <div class="left-cart-item-func">
+                            <div class="cart-item__func-container">
+                                <div class="cart-item__func">
                                     <div class="stepper-container">
                                         <div class="stepper">
-                                          <button class="decrement" for="stepper2" id="decrement2" onclick="stepper(this)">-</button>
+                                          <button class="decrement" data-for="stepper2" id="decrement2" onclick="stepper(this)">-</button>
                                           <input
                                             type="number"
                                             class="incrementor-input"
@@ -182,48 +183,48 @@
                                             id="stepper2"
                                             readonly
                                           />
-                                          <button class="increment" for="stepper2" id="increment2" onclick="stepper(this)">+</button>
+                                          <button class="increment" data-for="stepper2" id="increment2" onclick="stepper(this)">+</button>
                                         </div>
                                       </div>
-                                    <div class="left-cart-item-buttons">
+                                    <div class="cart-item__func__buttons">
                                         <button class="img-button"><img src="images/like-button.svg" alt="like"></button>
-                                        <button class="img-button"><img src="images/delete-button.svg" alt="delete" for="cart-item2" onclick="deleteItem(this)"></button>
+                                        <button class="img-button"><img src="images/delete-button.svg" alt="delete" data-for="cart-item2" onclick="deleteItem(this)"></button>
                                     </div>
                                 </div>
-                                <div class="item-price-container">
-                                    <div class="item-price">
-                                        <div class="item-price-text" id="price2">
+                                <div class="cart-item__price">
+                                    <div class="cart-item__price__text">
+                                        <div class="cart-item__price__text--big" id="price2">
                                             2100047
                                         </div>
-                                        <div class="item-price-currency"> сом</div>
+                                        <div class="cart-item__price__text--small"> сом</div>
                                     </div>
-                                    <div class="item-price-discount">
+                                    <div class="cart-item__price__text--grey">
                                         <span id="initial-price2">2300047</span> сом
                                     </div>
                                 </div>
                             </div>
                         </div>
                          <!-- item 3 -->
-                         <div class="left-cart-item" id="cart-item3">
-                          <div class="left-cart-item-desc-container ">
+                         <div class="cart-item" id="cart-item3">
+                          <div class="checkbox-container">
                               <input type="checkbox" id="checkbox-item3" name="checkbox-item3" checked>
-                              <label for="checkbox-item3" class="left-cart-item-desc-container">
-                                <div class="left-cart-item-desc-uniter">
+                              <label for="checkbox-item3" class="checkbox-container">
+                                <div class="cart-item__desc-uniter">
                                   <img class="item-img" src="images/item3.svg" alt="item image">
-                                  <div class="left-cart-item-desc">
-                                      <div class="item-title-text">Карандаши цветные Faber-Castell "Замок", набор 24 цвета, заточенные, шестигранные, Faber Castell</div>
-                                      <div class="item-footer-text">Коледино WB</div>
-                                      <div class="item-footer-text" style="display: flex; align-items: center">ООО Вайлдберриз  <img src="images/i.svg"></div>
+                                  <div class="cart-item__desc">
+                                      <div class="cart-item__desc__title">Карандаши цветные Faber-Castell "Замок", набор 24 цвета, заточенные, шестигранные, Faber Castell</div>
+                                      <div class="cart-item__footer__text">Коледино WB</div>
+                                      <div class="cart-item__footer__text" style="display: flex; align-items: center">ООО Вайлдберриз  <img src="images/i.svg"></div>
                                   </div>
                                 </div>
                               </label>
 
                           </div>
-                          <div class="left-cart-item-func-container">
-                              <div class="left-cart-item-func">
+                          <div class="cart-item__func-container">
+                              <div class="cart-item__func">
                                   <div class="stepper-container">
                                       <div class="stepper">
-                                        <button class="decrement" for="stepper3" id="decrement3" onclick="stepper(this)">-</button>
+                                        <button class="decrement" data-for="stepper3" id="decrement3" onclick="stepper(this)">-</button>
                                         <input
                                           type="number"
                                           class="incrementor-input"
@@ -234,25 +235,25 @@
                                           id="stepper3"
                                           readonly
                                         />
-                                        <button class="increment" for="stepper3" id="increment3" onclick="stepper(this)">+</button>
+                                        <button class="increment" data-for="stepper3" id="increment3" onclick="stepper(this)">+</button>
                                       </div>
                                     </div>
-                                  <div class="items-left-text">
+                                  <div class="cart-item__func__text">
                                       Осталось 2 шт.
                                   </div>
-                                  <div class="left-cart-item-buttons">
+                                  <div class="cart-item__func__buttons">
                                       <button class="img-button"><img src="images/like-button.svg" alt="like"></button>
-                                      <button class="img-button"><img src="images/delete-button.svg" alt="delete" for="cart-item3" onclick="deleteItem(this)"></button>
+                                      <button class="img-button"><img src="images/delete-button.svg" alt="delete" data-for="cart-item3" onclick="deleteItem(this)"></button>
                                   </div>
                               </div>
-                              <div class="item-price-container">
-                                  <div class="item-price">
-                                      <div class="item-price-text" id="price3">
+                              <div class="cart-item__price">
+                                  <div class="cart-item__price__text">
+                                      <div class="cart-item__price__text--big" id="price3">
                                           494
                                       </div>
-                                      <div class="item-price-currency"> сом</div>
+                                      <div class="cart-item__price__text--small"> сом</div>
                                   </div>
-                                  <div class="item-price-discount">
+                                  <div class="cart-item__price__text--grey">
                                       <span id="initial-price3">950</span> сом
                                   </div>
                               </div>
@@ -262,80 +263,80 @@
                 </div>
             </div>
             <!--Missing Items-->
-            <div class="left-cart-container">
-              <div class="left-cart-items">
-                  <div class="left-cart-items-header">
-                      <div class="left-items-title" id="left-cart-items-header"> Отсутствуют 3 товара</div>
-                      <div class="arrow-button" onclick="collapse(this)" for="left-cart-items-missing">
+            <div class="cart">
+              <div class="cart__items">
+                  <div class="cart__items__header">
+                      <div class="left-items-title" id="cart__items__header"> Отсутствуют 3 товара</div>
+                      <div class="arrow-button" onclick="collapse(this)" data-for="cart-items--missing">
                           <svg id="opened-missing" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#8A898E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-up"><polyline points="18 15 12 9 6 15"></polyline></svg>
                           <svg id="closed-missing" style="display: none;" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#8A898E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg>
                       </div>
                   </div>
                   <hr>
-                  <div class="left-cart-items-main" id="left-cart-items-missing">
+                  <div class="cart__items__main" id="cart-items--missing">
                       <!-- item 1 -->
-                      <div class="left-cart-item" id="missing-item1">
-                          <div class="left-cart-item-desc-container ">
-                            <div class="left-cart-item-desc-uniter">
+                      <div class="cart-item" id="missing-item1">
+                          <div class="checkbox-container">
+                            <div class="cart-item__desc-uniter">
                               <img class="item-img" src="images/item1.svg" alt="item image">
-                                  <div class="left-cart-item-desc">
-                                      <div class="item-title-text">Футболка UZcotton мужская</div>
+                                  <div class="cart-item__desc">
+                                      <div class="cart-item__desc__title">Футболка UZcotton мужская</div>
                                       <div style="display: flex; align-items: center; gap: 16px;">
-                                          <div class="item-desc-text">Цвет: белый</div>
-                                          <div class="item-desc-text">Размер: 56</div>
+                                          <div class="cart-item__desc__text">Цвет: белый</div>
+                                          <div class="cart-item__desc__text">Размер: 56</div>
                                       </div>
                                   </div>
                             </div>
                                   
                           </div>
-                          <div class="left-cart-item-func-container" style="padding-right: 130px;">
-                              <div class="left-cart-item-func">
-                                  <div class="left-cart-item-buttons">
+                          <div class="cart-item__func-container" style="padding-right: 130px;">
+                              <div class="cart-item__func">
+                                  <div class="cart-item__func__buttons">
                                       <button class="img-button"><img src="images/like-button.svg" alt="like"></button>
-                                      <button class="img-button"><img src="images/delete-button.svg" alt="delete" for="missing-item1" onclick="deleteItem(this)"></button>
+                                      <button class="img-button"><img src="images/delete-button.svg" alt="delete" data-for="missing-item1" onclick="deleteItem(this)"></button>
                                   </div>
                               </div>
                           </div>
                       </div>
                       <!-- item 2 -->
-                      <div class="left-cart-item" id="missing-item2">
-                          <div class="left-cart-item-desc-container ">
-                            <div class="left-cart-item-desc-uniter">
+                      <div class="cart-item" id="missing-item2">
+                          <div class="checkbox-container">
+                            <div class="cart-item__desc-uniter">
                               <img class="item-img" src="images/item2.svg" alt="item image">
-                              <div class="left-cart-item-desc">
-                                  <div class="item-title-text">Силиконовый чехол картхолдер (отверстия) для карт, прозрачный кейс бампер на Apple Iphone XR, MobiSafe</div>
+                              <div class="cart-item__desc">
+                                  <div class="cart-item__desc__title">Силиконовый чехол картхолдер (отверстия) для карт, прозрачный кейс бампер на Apple Iphone XR, MobiSafe</div>
                                   <div style="display: flex; align-items: center; gap: 16px;">
-                                      <div class="item-desc-text">Цвет: прозрачный</div>
-                                      <div class="item-desc-text">Размер: 56</div>
+                                      <div class="cart-item__desc__text">Цвет: прозрачный</div>
+                                      <div class="cart-item__desc__text">Размер: 56</div>
                                   </div>
                               </div>
                             </div>
                                 
                           </div>
-                          <div class="left-cart-item-func-container" style="padding-right: 130px;">
-                              <div class="left-cart-item-func">
-                                  <div class="left-cart-item-buttons">
+                          <div class="cart-item__func-container" style="padding-right: 130px;">
+                              <div class="cart-item__func">
+                                  <div class="cart-item__func__buttons">
                                       <button class="img-button"><img src="images/like-button.svg" alt="like"></button>
-                                      <button class="img-button"><img src="images/delete-button.svg" alt="delete" for="missing-item2" onclick="deleteItem(this)"></button>
+                                      <button class="img-button"><img src="images/delete-button.svg" alt="delete" data-for="missing-item2" onclick="deleteItem(this)"></button>
                                   </div>
                               </div>
                           </div>
                       </div>
                        <!-- item 3 -->
-                       <div class="left-cart-item" id="missing-item3">
-                        <div class="left-cart-item-desc-container ">
-                          <div class="left-cart-item-desc-uniter">
+                       <div class="cart-item" id="missing-item3">
+                        <div class="checkbox-container">
+                          <div class="cart-item__desc-uniter">
                             <img class="item-img" src="images/item3.svg" alt="item image">
-                            <div class="left-cart-item-desc">
-                                <div class="item-title-text">Карандаши цветные Faber-Castell "Замок", набор 24 цвета, заточенные, шестигранные, Faber Castell</div>
+                            <div class="cart-item__desc">
+                                <div class="cart-item__desc__title">Карандаши цветные Faber-Castell "Замок", набор 24 цвета, заточенные, шестигранные, Faber Castell</div>
                             </div>
                           </div>
                         </div>
-                        <div class="left-cart-item-func-container" style="padding-right: 130px;">
-                            <div class="left-cart-item-func">
-                                <div class="left-cart-item-buttons">
+                        <div class="cart-item__func-container" style="padding-right: 130px;">
+                            <div class="cart-item__func">
+                                <div class="cart-item__func__buttons">
                                     <button class="img-button"><img src="images/like-button.svg" alt="like"></button>
-                                    <button class="img-button"><img src="images/delete-button.svg" alt="delete" for="missing-item3" onclick="deleteItem(this)"></button>
+                                    <button class="img-button"><img src="images/delete-button.svg" alt="delete" data-for="missing-item3" onclick="deleteItem(this)"></button>
                                 </div>
                             </div>
                         </div>
@@ -346,16 +347,16 @@
           <!--forms-->
           <div class="forms">
             <!--delivery form-->
-            <div class="form-container">
-              <div class="form-main">
-                <div class="form-main-header">
-                  <div class="form-title">Способ доставки</div>
-                  <button class="form-text-button" id="delivery-popup-button">Изменить</button>
+            <div class="form">
+              <div class="form__main">
+                <div class="form__main__header">
+                  <div class="form__title">Способ доставки</div>
+                  <button class="text-button" id="delivery-popup-button">Изменить</button>
                 </div>
-                <div class="form-main-content">
+                <div class="form__main__content">
                   <!-- Пункт выдачи-->
-                  <div class="form-main-content-item">
-                    <div class="form-main-content-item-label">
+                  <div class="form__main__content__item">
+                    <div class="form__main__content__item__label">
                       Пункт выдачи
                     </div>
                       <div>
@@ -364,18 +365,18 @@
                       </div>
                   </div>
                   <!-- Стоимость доставки-->
-                  <div class="form-main-content-item">
-                    <div class="form-main-content-item-label">
+                  <div class="form__main__content__item">
+                    <div class="form__main__content__item__label">
                       Стоимость доставки
                     </div>
                      Бесплатно
                   </div>
                   <!-- Дата доставки-->
-                  <div class="form-main-content-item" id="date-delivery-item1">
-                    <div class="form-main-content-item-label">
+                  <div class="form__main__content__item" id="date-delivery-item1">
+                    <div class="form__main__content__item__label">
                       5-6 февраля
                     </div>
-                     <div class="form-main-content-item-images">
+                     <div class="form__main__content__item__images">
                       <div class="img-container" id="item-img1">
                         <img src="images/item1.svg" width="40px" height="56px" alt="item">
                         <div class="cart-item-number" style="left: 75%; bottom: 85%; display: none;">1</div>
@@ -391,11 +392,11 @@
                      </div>
                   </div>
                   <!-- Дата доставки-->
-                  <div class="form-main-content-item" id="date-delivery-item2">
-                    <div class="form-main-content-item-label">
+                  <div class="form__main__content__item" id="date-delivery-item2">
+                    <div class="form__main__content__item__label">
                       7-8 февраля
                     </div>
-                     <div class="form-main-content-item-images" >
+                     <div class="form__main__content__item__images" >
                       <div class="img-container" id="item-img2(1)">
                         <img src="images/item2.svg" width="40px" height="56px" alt="item">
                         <div class="cart-item-number" style="left: 75%; bottom: 85%;">16</div>
@@ -404,19 +405,19 @@
                   </div>
                 </div>
               </div>
-              <div class="form-footer">
+              <div class="form__footer">
                 <img src="images/price shipping.svg" alt="price shipping img"> Обратная доставка товаров на склад при отказе - <span style="color:#0CB477"> бесплатно</span>
               </div>
             </div>
 
             <!--payment form-->
-            <div class="form-container">
-              <div class="form-main">
-                <div class="form-main-header">
-                  <div class="form-title">Способ оплаты</div>
-                  <button class="form-text-button" id="payment-popup-button">Изменить</button>
+            <div class="form">
+              <div class="form__main">
+                <div class="form__main__header">
+                  <div class="form__title">Способ оплаты</div>
+                  <button class="text-button" id="payment-popup-button">Изменить</button>
                 </div>
-                <div class="form-main-content">
+                <div class="form__main__content">
                   <div class="payment-card">
                     <img src="images/payment/mir.svg" alt="payment card" id="card-img"> 
                      <span id="card-number">1234 56** **** 1234</span> <span id="card-expiration-date">01/30</span>
@@ -430,87 +431,164 @@
         </div>
 
         <!-- right -->
-        <div class="right">right</div>
+        <div class="right">
+          <!--form all-->
+          <div class="form">
+            <div class="form__main" style="gap:24px">
+              <!--price-->
+              <div class="form__main__content" style="gap: 8px">
+                <div class="form__main__header">
+                  <div class="form__title">Итого</div>
+                  <div class="form__title"><span>2 101 063</span>  сом</div>
+                </div>
+                <div class="form__subheader">
+                  <div class="form__subheader__item">
+                    <div><span>4</span> товара</div>
+                    <div><span>2 302 048</span> сом</div>
+                  </div>
+                  <div class="form__subheader__item">
+                    <div>Скидка</div>
+                    <div><span>- 200985</span> сом</div>
+                  </div>
+                  <div class="form__subheader__item">
+                    <div>Доставка</div>
+                    <div>Бесплатно</div>
+                  </div>
+                </div>
+              </div>
+              <!--delivery-->
+              <div class="form__main__content form__main__content--small-font" style="gap:12px">
+                <div class="form__main__content" style="gap: 4px">
+                  <div class="form__main__header">
+                    <div class="form__subtitle">Доставка в пункт выдачи</div>
+                    <button class="img-button"><img src="images/edit-button.svg" alt="edit" onclick="toggleDeliveryPopup()"></button>
+                  </div>
+                  <div style="padding: 0 24px">
+                    Бишкек, улмца Ахматбека Суюмбаева, 12/1
+                  </div>
+                  <div style="padding: 0 24px;
+                  color: #cb11ab;">5-8 фев</div>
+                </div>
+                <div class="form__footer--grey-background">
+                  <img src="images/price shipping.svg" alt="price shipping">
+                  <div>Обратная доставка товаров на склад при отказе - <span style="color:#0CB477"> бесплатно</span></div>
+                </div>
+              </div>
+              <!--payment-->
+              <div class="form__main__content form__main__content--small-font" style="gap:12px">
+                <div class="form__main__content" style="gap: 4px">
+                  <div class="form__main__header">
+                    <div class="form__subtitle">Оплата картой</div>
+                    <button class="img-button"><img src="images/edit-button.svg" alt="edit" onclick="togglePaymentPopup()"></button>
+                  </div>
+                </div>
+                <div class="payment-card">
+                  <img src="images/payment/mir.svg" alt="payment card" id="card-img"> 
+                   <span id="card-number">1234 56** **** 1234</span> <span id="card-expiration-date">01/30</span>
+                </div>
+                <div class="form__footer--grey-background" style="flex-direction: column; align-items: flex-start;">
+                  <div class="checkbox-container" style="padding: 0; gap:8px">
+                    <input type="checkbox" name="payBefore" id="payBefore">
+                    <label for="payBefore">Списать оплату сразу</label>
+                  </div>
+                  <div id="hint">Спишем оплату с карты при получении</div>
+                </div>
+              </div>
+
+         
+            </div>
+            <div class="form__footer--column">
+              <button id="order-button-ok" class="button-ok" style="width: calc(100% - 48px);">Заказать</button>
+              <div class="checkbox-container" style="padding: 0 24px; align-items: flex-start;">
+                <input type="checkbox" id="rules-checkbox" name="rules-checkbox" class="transparent-checkbox" checked>  
+                <label for="rules-checkbox" class="font-13">
+                  Соглашаюсь с правилами пользования торговой площадки и возврата
+                </label>
+              </div>
+            </div>
+          </div>
+
+        </div>
     </main>
     <!-- popup delivery-->
     <div class="popup-container" id="delivery-popup-container">
       <div class="popup">
-        <div class="popup-header">
+        <div class="popup__header">
           Способ доставки
           <button class="close-button" id="delivery-popup-close-button"> <img src="images/close-button.svg" alt="close-button"></button>
         </div>
         <!--tabs-->
-        <div class="popup-tabs">
-          <div class="popup-tab popup-tab-active" id="issue-points-tab" for="issue-points-option" onclick="switchTab(this)">
+        <div class="bubble-tabs">
+          <div class="bubble-tab bubble-tab--active" id="issue-points-tab" data-for="issue-points-option" onclick="switchTab(this)">
             В пункт выдачи
           </div>
-          <div class="popup-tab" id="courier-tab" for="courier-option" onclick="switchTab(this)">
+          <div class="bubble-tab" id="courier-tab" data-for="courier-option" onclick="switchTab(this)">
             Курьером
           </div>
         </div>
         <!--Issue points-->
-        <div class="popup-content" id="issue-points-option">
+        <div class="popup__content" id="issue-points-option">
           Мои адреса
-            <div class="popup-content-item" id="popup-issue-point-item1">
-              <div class="popup-content-item-radio">
+            <div class="popup__content__item" id="popup-issue-point-item1">
+              <div class="checkbox-container--baseline">
                 <input type="radio" id="issue-point1" name="issue-point" value="Бишкек, улица Ахматбека Суюмбаева, 12/1 $$$ 4.99" checked >
                 <label for="delivery-radio1">
                   Бишкек, улица Ахматбека Суюмбаева, 12/1
-                    <div> <img src="images/star.svg" alt="star"> 4.99  <span class="popup-content-item-footer"> Пункт выдачи</span> </div>
+                    <div> <img src="images/star.svg" alt="star"> 4.99  <span class="popup__content__item__footer"> Пункт выдачи</span> </div>
                 </label>
               </div>
-              <button class="img-button"><img src="images/delete-button.svg" alt="delete" for="popup-issue-point-item1" onclick="deleteItem(this)"></button>
+              <button class="img-button"><img src="images/delete-button.svg" alt="delete" data-for="popup-issue-point-item1" onclick="deleteItem(this)"></button>
           </div>
-          <div class="popup-content-item" id="popup-issue-point-item2">
-              <div class="popup-content-item-radio">
+          <div class="popup__content__item" id="popup-issue-point-item2">
+              <div class="checkbox-container--baseline">
                 <input type="radio" id="issue-point2" name="issue-point" value="Бишкек, микрорайон Джал, улица Ахунбаева Исы, д. 67/1 $$$ 4.99">
                 <label for="delivery-radio2">
                     Бишкек, микрорайон Джал, улица Ахунбаева Исы, д. 67/1
-                    <div> <img src="images/star.svg" alt="star"> 4.99  <span class="popup-content-item-footer"> Пункт выдачи</span> </div>
+                    <div> <img src="images/star.svg" alt="star"> 4.99  <span class="popup__content__item__footer"> Пункт выдачи</span> </div>
                 </label>
               </div>
-              <button class="img-button"><img src="images/delete-button.svg" alt="delete" for="popup-issue-point-item2" onclick="deleteItem(this)"></button>
+              <button class="img-button"><img src="images/delete-button.svg" alt="delete" data-for="popup-issue-point-item2" onclick="deleteItem(this)"></button>
           </div>
-          <div class="popup-content-item" id="popup-issue-point-item3">
-              <div class="popup-content-item-radio">
+          <div class="popup__content__item" id="popup-issue-point-item3">
+              <div class="checkbox-container--baseline">
                 <input type="radio" id="issue-point3" name="issue-point" value="Бишкек, улица Табышалиева, д. 57 $$$ 4.99">
                 <label for="delivery-radio3">
                     Бишкек, улица Табышалиева, д. 57
-                    <div> <img src="images/star.svg" alt="star"> 4.99  <span class="popup-content-item-footer"> Пункт выдачи</span> </div>
+                    <div> <img src="images/star.svg" alt="star"> 4.99  <span class="popup__content__item__footer"> Пункт выдачи</span> </div>
                 </label>
               </div>
-              <button class="img-button"><img src="images/delete-button.svg" alt="delete" for="popup-issue-point-item3" onclick="deleteItem(this)"></button>
+              <button class="img-button"><img src="images/delete-button.svg" alt="delete" data-for="popup-issue-point-item3" onclick="deleteItem(this)"></button>
           </div>
         </div>
         <!--Courier-->
-        <div class="popup-content" id="courier-option" style="display: none">
+        <div class="popup__content" id="courier-option" style="display: none">
           Мои адреса
-            <div class="popup-content-item" id="popup-courier-item1">
-              <div class="popup-content-item-radio">
+            <div class="popup__content__item" id="popup-courier-item1">
+              <div class="checkbox-container--baseline">
                 <input type="radio" id="courier-address1" name="courier-address" value="Бишкек, улица Табышалиева, 57" checked >
                 <label for="delivery-radio1">
                   Бишкек, улица Табышалиева, 57
                 </label>
               </div>
-              <button class="img-button"><img src="images/delete-button.svg" alt="delete" for="popup-courier-item1" onclick="deleteItem(this)"></button>
+              <button class="img-button"><img src="images/delete-button.svg" alt="delete" data-for="popup-courier-item1" onclick="deleteItem(this)"></button>
           </div>
-          <div class="popup-content-item" id="popup-courier-item2">
-              <div class="popup-content-item-radio">
+          <div class="popup__content__item" id="popup-courier-item2">
+              <div class="checkbox-container--baseline">
                 <input type="radio" id="courier-address2" name="courier-address" value="Бишкек, улица Жукеева-Пудовника, 77/1">
                 <label for="delivery-radio2">
                     Бишкек, улица Жукеева-Пудовника, 77/1
                 </label>
               </div>
-              <button class="img-button"><img src="images/delete-button.svg" alt="delete" for="popup-courier-item2" onclick="deleteItem(this)"></button>
+              <button class="img-button"><img src="images/delete-button.svg" alt="delete" data-for="popup-courier-item2" onclick="deleteItem(this)"></button>
           </div>
-          <div class="popup-content-item" id="popup-courier-item3">
-              <div class="popup-content-item-radio">
+          <div class="popup__content__item" id="popup-courier-item3">
+              <div class="checkbox-container--baseline">
                 <input type="radio" id="courier-address3" name="courier-address" value="Бишкек, микрорайон Джал, улица Ахунбаева Исы, 67/1">
                 <label for="delivery-radio3">
                     Бишкек, микрорайон Джал, улица Ахунбаева Исы, 67/1
                 </label>
               </div>
-              <button class="img-button"><img src="images/delete-button.svg" alt="delete" for="popup-courier-item3" onclick="deleteItem(this)"></button>
+              <button class="img-button"><img src="images/delete-button.svg" alt="delete" data-for="popup-courier-item3" onclick="deleteItem(this)"></button>
           </div>
         </div>
         <button id="delivery-button-ok" class="button-ok">Выбрать</button>
@@ -520,15 +598,15 @@
     <!-- popup payment-->
     <div class="popup-container" id="payment-popup-container">
       <div class="popup">
-        <div class="popup-header">
+        <div class="popup__header">
           Способ оплаты
           <button class="close-button" id="payment-popup-close-button"> <img src="images/close-button.svg" alt="close-button"></button>
         </div>
         <!--payment cards-->
-        <div class="popup-content" id="courier-option">
+        <div class="popup__content" id="courier-option">
           <!--card-->
-          <div class="popup-content-item" id="popup-courier-item1">
-            <div class="popup-content-item-radio">
+          <div class="popup__content__item" id="popup-courier-item1">
+            <div class="checkbox-container--baseline">
               <input type="radio" id="radio-card1" name="card" value="1234 56** **** 1234 $$$ mir" checked >
               <label for="radio-card1">
                 <div class="payment-card">
@@ -539,8 +617,8 @@
             </div>
           </div>
           <!--card-->
-          <div class="popup-content-item" id="popup-courier-item1">
-            <div class="popup-content-item-radio">
+          <div class="popup__content__item" id="popup-courier-item1">
+            <div class="checkbox-container--baseline">
               <input type="radio" id="radio-card2" name="card" value="1234 56** **** 1234 $$$ visa">
               <label for="radio-card2">
                 <div class="payment-card">
@@ -551,8 +629,8 @@
             </div>
           </div>
           <!--card-->
-          <div class="popup-content-item" id="popup-courier-item1">
-            <div class="popup-content-item-radio">
+          <div class="popup__content__item" id="popup-courier-item1">
+            <div class="checkbox-container--baseline">
               <input type="radio" id="radio-card3" name="card" value="1234 56** **** 1234 $$$ mastercard" >
               <label for="radio-card3">
                 <div class="payment-card">
@@ -563,8 +641,8 @@
             </div>
           </div>
           <!--card-->
-          <div class="popup-content-item" id="popup-courier-item1">
-            <div class="popup-content-item-radio">
+          <div class="popup__content__item" id="popup-courier-item1">
+            <div class="checkbox-container--baseline">
               <input type="radio" id="radio-card4" name="card" value="1234 56** **** 1234 $$$ maestro">
               <label for="radio-card4">
                 <div class="payment-card">

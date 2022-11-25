@@ -36,7 +36,7 @@ function togglePaymentPopup() {
 
 function chooseAddress() {
     toggleDeliveryPopup()
-    if (document.querySelector(".popup-tab-active") === tabIssue) {
+    if (document.querySelector(".bubble-tab--active") === tabIssue) {
         const radio = document.querySelector('input[name="issue-point"]:checked')
         const value = radio.value
         let [address, rating] = value.split("$$$")

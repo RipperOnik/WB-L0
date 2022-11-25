@@ -2,8 +2,8 @@ let opened = true
 let openedMissing = true
 let openedButton
 let closedButton
-const openedHeader = document.getElementById("left-cart-items-header-opened")
-const closedHeader = document.getElementById("left-cart-items-header-closed")
+const openedHeader = document.getElementById("cart__items__header--opened")
+const closedHeader = document.getElementById("cart__items__header--closed")
 const priceTag1 = document.getElementById("price1")
 const priceTag2 = document.getElementById("price2")
 const priceTag3 = document.getElementById("price3")
@@ -69,10 +69,10 @@ checkbox3.addEventListener('change', function () {
 
 
 function collapse(btn) {
-    const cartItems = btn.getAttribute("for")
+    const cartItems = btn.getAttribute("data-for")
     const items = document.getElementById(cartItems)
     // cart items
-    if (cartItems !== "left-cart-items-missing") {
+    if (cartItems !== "cart-items--missing") {
         openedButton = document.getElementById("opened")
         closedButton = document.getElementById("closed")
         opened = !opened

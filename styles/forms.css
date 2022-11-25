@@ -5,7 +5,7 @@
   gap: 16px;
   isolation: isolate;
 }
-.form-container {
+.form {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -19,7 +19,7 @@
   margin-top: 16px;
 }
 
-.form-main {
+.form__main {
   display: flex;
   width: 100%;
   flex-direction: column;
@@ -27,7 +27,7 @@
   padding: 0px;
   gap: 16px;
 }
-.form-main-header {
+.form__main__header {
   display: flex;
   width: 100%;
   justify-content: space-between;
@@ -36,16 +36,14 @@
   gap: 10px;
 }
 
-.form-title {
+.form__title {
   font-weight: 700;
   font-size: 24px;
   line-height: 32px;
 
-  display: flex;
-  align-items: center;
   letter-spacing: -0.01em;
 }
-.form-text-button {
+.text-button {
   border: none;
   background-color: transparent;
   color: #cb11ab;
@@ -55,14 +53,14 @@
   line-height: 24px;
 }
 
-.form-main-content {
+.form__main__content {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 16px;
   width: 100%;
 }
-.form-main-content-item {
+.form__main__content__item {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
@@ -72,13 +70,13 @@
   font-size: 16px;
   line-height: 24px;
 }
-.form-main-content-item-label {
+.form__main__content__item__label {
   font-weight: 600;
   font-size: 16px;
   line-height: 24px;
   width: 160px;
 }
-.form-main-content-item-images {
+.form__main__content__item__images {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
@@ -92,7 +90,7 @@
 }
 /* image-with-number  */
 
-.form-footer {
+.form__footer {
   width: 100%;
   padding: 0 24px;
   font-weight: 400;
@@ -104,6 +102,15 @@
   gap: 4px;
 }
 
+.form__footer--column {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 12px;
+}
+
 .payment-card {
   display: flex;
   flex-direction: row;
@@ -112,3 +119,77 @@
   gap: 8px;
   width: 100%;
 }
+
+/* all form */
+.form__subheader {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  padding: 0px 24px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+}
+.form__subheader__item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0px;
+  width: 100%;
+}
+
+.form__main__content--small-font {
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 16px;
+}
+
+.form__footer--grey-background {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 8px 8px 12px;
+  margin: 0px 24px;
+  gap: 8px;
+  width: calc(100% - 48px);
+  background: #f6f6fa;
+  border-radius: 8px;
+  font-size: 13px;
+  line-height: 16px;
+}
+
+.form__subtitle {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+/** Кастомный чекбокс **/
+input[type="checkbox"].borderless-checkbox {
+  accent-color: white;
+}
+input[type="checkbox"].transparent-checkbox {
+  display: none;
+}
+input[type="checkbox"].transparent-checkbox + label::before {
+  content: "";
+  display: inline-block;
+  vertical-align: bottom;
+  width: 18px;
+  height: 18px;
+  border-radius: 10%;
+  vertical-align: top;
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgb(133, 133, 133);
+}
+input[type="checkbox"].transparent-checkbox:checked + label::before {
+  content: "✓";
+  color: black;
+  font-size: 13px;
+  text-align: center;
+  background: transparent;
+  border-color: transparent;
+}
+/** Конец кастомного чекбокса **/

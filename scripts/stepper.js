@@ -85,7 +85,7 @@ manageButtons()
 
 
 function stepper(btn) {
-    const inputId = btn.getAttribute("for");
+    const inputId = btn.getAttribute("data-for");
     const myInput = document.getElementById(inputId);
     const id = btn.getAttribute("class");
     const min = myInput.getAttribute("min");

@@ -29,7 +29,7 @@
   font-size: 13px;
   line-height: 16px;
 }
-.popup-header {
+.popup__header {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -48,7 +48,7 @@
   background: transparent;
 }
 /* tabs */
-.popup-tabs {
+.bubble-tabs {
   display: flex;
   width: 100%;
   flex-direction: row;
@@ -57,7 +57,7 @@
   gap: 8px;
   margin-bottom: 26px;
 }
-.popup-tab {
+.bubble-tab {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -72,14 +72,14 @@
   cursor: pointer;
 }
 
-.popup-tab:hover {
+.bubble-tab:hover {
   border: 2px solid #cb11ab;
 }
-.popup-tab-active {
+.bubble-tab--active {
   border: 2px solid #cb11ab;
 }
 /* tabs */
-.popup-content {
+.popup__content {
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -87,7 +87,7 @@
   padding: 0px 24px 33px;
   gap: 8px;
 }
-.popup-content-item {
+.popup__content__item {
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
@@ -99,7 +99,7 @@
   gap: 8px;
   justify-content: space-between;
 }
-.popup-content-item-radio {
+.checkbox-container--baseline {
   display: flex;
   flex-direction: row;
   align-items: baseline;
@@ -112,7 +112,7 @@
   padding: 0px;
   gap: 4px;
 }
-.popup-content-item-footer {
+.popup__content__item__footer {
   font-size: 13px;
   line-height: 16px;
 
@@ -155,6 +155,7 @@ input[type="radio"] {
 
   color: #ffffff;
 }
+
 /* This will blur the screen and make the popup visible  */
 .show-popup {
   opacity: 1;

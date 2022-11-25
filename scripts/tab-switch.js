@@ -7,7 +7,7 @@ const tabContents = [tabContent1, tabContent2]
 
 function clearTabs() {
     tabs.forEach((tab) => {
-        tab.classList.remove("popup-tab-active")
+        tab.classList.remove("bubble-tab--active")
     })
     tabContents.forEach(tabContent => {
         tabContent.style.display = "none"
@@ -16,8 +16,8 @@ function clearTabs() {
 
 function switchTab(tab) {
     clearTabs()
-    tab.classList.add("popup-tab-active")
-    const tabContentId = tab.getAttribute("for")
+    tab.classList.add("bubble-tab--active")
+    const tabContentId = tab.getAttribute("data-for")
     const tabContent = document.getElementById(tabContentId)
     tabContent.style.display = "flex"
 }
