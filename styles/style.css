@@ -197,3 +197,21 @@ input[type="search"] {
   align-items: center;
   padding: 0px 2px;
 }
+
+.cart-item-number--img-item {
+  position: absolute;
+  left: 75%;
+  bottom: 85%;
+  min-width: 15px;
+  height: 16px;
+  background: #f55123;
+  border-radius: 16px;
+  font-size: 10px;
+  color: white;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0px 2px;
+}

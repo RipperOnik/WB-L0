@@ -88,7 +88,8 @@ function stepper(btn) {
     const max = myInput.getAttribute("max");
     const step = myInput.getAttribute("step");
     const val = myInput.getAttribute("value");
-    const calcStep = (id == "increment") ? (step * 1) : (step * -1);
+    console.log(id);
+    const calcStep = (id == "increment-button") ? (step * 1) : (step * -1);
     const newValue = parseInt(val) + calcStep;
 
     // if the number of items is within boundaries, then set the new value and manage buttons 
@@ -120,9 +121,9 @@ function stepper(btn) {
         initialPriceStep = initialPrice3 / num3
         initialPriceTag = initialPriceTag3
     }
-    priceStep = (id == "increment") ? (priceStep * 1) : (priceStep * -1);
+    priceStep = (id == "increment-button") ? (priceStep * 1) : (priceStep * -1);
     priceTag.innerText = Math.round(parseInt(priceTag.innerText) + priceStep)
-    initialPriceStep = (id == "increment") ? (initialPriceStep * 1) : (initialPriceStep * -1);
+    initialPriceStep = (id == "increment-button") ? (initialPriceStep * 1) : (initialPriceStep * -1);
     initialPriceTag.innerText = Math.round(parseInt(initialPriceTag.innerText) + initialPriceStep)
 
 }

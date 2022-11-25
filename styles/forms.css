@@ -66,14 +66,8 @@
   align-items: flex-start;
   padding: 0px 24px;
   gap: 32px;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 24px;
 }
 .form__main__content__item__label {
-  font-weight: 600;
-  font-size: 16px;
-  line-height: 24px;
   width: 160px;
 }
 .form__main__content__item__images {
@@ -93,9 +87,6 @@
 .form__footer {
   width: 100%;
   padding: 0 24px;
-  font-weight: 400;
-  font-size: 13px;
-  line-height: 16px;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -127,9 +118,6 @@
   align-items: flex-start;
   width: 100%;
   padding: 0px 24px;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 24px;
 }
 .form__subheader__item {
   display: flex;
@@ -155,8 +143,6 @@
   width: calc(100% - 48px);
   background: #f6f6fa;
   border-radius: 8px;
-  font-size: 13px;
-  line-height: 16px;
 }
 
 .form__subtitle {

@@ -97,12 +97,22 @@ input[type="checkbox"] {
   height: 96px;
   border-radius: 8px;
 }
+.item-img--small {
+  width: 40px;
+  height: 56px;
+  border-radius: 8px;
+}
 .cart-item__desc__title {
-  font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 24px;
   width: 275px;
+}
+.cart-item__desc__parameters {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.cart-item__desc__stock{
+  display: flex; 
+  align-items: center"
 }
 .cart-item__desc__text {
   font-style: normal;
@@ -125,6 +135,14 @@ input[type="checkbox"] {
   align-items: flex-start;
   padding: 9px 0px 0px;
   gap: 16px;
+}
+.cart-item__func-container--missing{
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 9px 130px 0px 0px;
+  gap: 16px;
+
 }
 .cart-item__func {
   display: flex;
@@ -216,6 +234,7 @@ button.img-button:hover {
   background-color: #ffffff;
   border-radius: 8px;
 }
+
 input[type="number"].incrementor-input {
   -moz-appearance: textfield;
   text-align: center;
@@ -230,7 +249,7 @@ input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
-.decrement {
+.decrement-button {
   width: 24px;
   color: black;
   background-color: #ffffff;
@@ -240,7 +259,7 @@ input::-webkit-inner-spin-button {
   padding: 10px 5px 10px 3px;
   border-radius: 8px 0 0 8px;
 }
-.increment {
+.increment-button {
   width: 24px;
   color: black;
   background-color: #ffffff;
