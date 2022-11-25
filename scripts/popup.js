@@ -5,6 +5,7 @@ const deliveryCloseButton = document.getElementById("delivery-popup-close-button
 const tabIssue = document.getElementById("issue-points-tab")
 const tabCourier = document.getElementById("courier-tab")
 const addressField = document.getElementById("address")
+const addressAllField = document.getElementById("address-all")
 const ratingField = document.getElementById("rating")
 const deliverybuttonOk = document.getElementById("delivery-button-ok")
 // payment
@@ -14,6 +15,8 @@ const paymentCloseButton = document.getElementById("payment-popup-close-button")
 const paymentbuttonOk = document.getElementById("payment-button-ok")
 const cardNumberField = document.getElementById("card-number")
 const cardImg = document.getElementById("card-img")
+const cardNumberAllField = document.getElementById("card-number-all")
+const cardAllImg = document.getElementById("card-img-all")
 
 function toggleDeliveryPopup() {
     deliveryPopupContainer.classList.toggle("show-popup");
@@ -36,21 +39,22 @@ function togglePaymentPopup() {
 
 function chooseAddress() {
     toggleDeliveryPopup()
+    let address
     if (document.querySelector(".bubble-tab--active") === tabIssue) {
         const radio = document.querySelector('input[name="issue-point"]:checked')
         const value = radio.value
-        let [address, rating] = value.split("$$$")
-        address = address.trim()
+        let [addressTemp, rating] = value.split("$$$")
+        address = addressTemp.trim()
         rating = rating.trim()
-        addressField.innerText = address
         ratingField.innerText = rating
     }
     else {
         const radio = document.querySelector('input[name="courier-address"]:checked')
         const value = radio.value
-        const address = value.trim()
-        addressField.innerText = address
+        address = value.trim()
     }
+    addressField.innerText = address
+    addressAllField.innerText = address
 }
 function chooseCard() {
     togglePaymentPopup()
@@ -61,6 +65,8 @@ function chooseCard() {
     cardType = cardType.trim()
     cardNumberField.innerText = cardNumber
     cardImg.src = `images/payment/${cardType}.svg`
+    cardNumberAllField.innerText = cardNumber
+    cardAllImg.src = `images/payment/${cardType}.svg`
 }
 
 

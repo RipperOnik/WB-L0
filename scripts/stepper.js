@@ -1,13 +1,5 @@
 
 
-const decrementBtn1 = document.getElementById("decrement1")
-const decrementBtn2 = document.getElementById("decrement2")
-const decrementBtn3 = document.getElementById("decrement3")
-
-const incrementBtn1 = document.getElementById("increment1")
-const incrementBtn2 = document.getElementById("increment2")
-const incrementBtn3 = document.getElementById("increment3")
-
 const num1 = (checkbox1.checked && item1.style.display !== "none") ? parseInt(stepper1.getAttribute("value")) : 0
 const num2 = (checkbox2.checked && item2.style.display !== "none") ? parseInt(stepper2.getAttribute("value")) : 0
 const num3 = (checkbox3.checked && item3.style.display !== "none") ? parseInt(stepper3.getAttribute("value")) : 0
@@ -15,6 +7,10 @@ const num3 = (checkbox3.checked && item3.style.display !== "none") ? parseInt(st
 const price1 = (checkbox1.checked && item1.style.display !== "none") ? parseInt(priceTag1.innerText) : 0
 const price2 = (checkbox2.checked && item2.style.display !== "none") ? parseInt(priceTag2.innerText) : 0
 const price3 = (checkbox3.checked && item3.style.display !== "none") ? parseInt(priceTag3.innerText) : 0
+
+const initialPrice1 = (checkbox1.checked && item1.style.display !== "none") ? parseInt(initialPriceTag1.innerText) : 0
+const initialPrice2 = (checkbox1.checked && item1.style.display !== "none") ? parseInt(initialPriceTag2.innerText) : 0
+const initialPrice3 = (checkbox1.checked && item1.style.display !== "none") ? parseInt(initialPriceTag3.innerText) : 0
 
 
 
@@ -104,23 +100,30 @@ function stepper(btn) {
     else {
         return
     }
-    let priceStep
-    let priceTag
+    let priceStep, priceTag, initialPriceStep, initialPriceTag
     if (inputId === "stepper1") {
         priceStep = price1 / num1
         priceTag = priceTag1
+        initialPriceStep = initialPrice1 / num1
+        initialPriceTag = initialPriceTag1
 
     }
     else if (inputId === "stepper2") {
         priceStep = price2 / num2
         priceTag = priceTag2
+        initialPriceStep = initialPrice2 / num2
+        initialPriceTag = initialPriceTag2
     }
     else if (inputId === "stepper3") {
         priceStep = price3 / num3
         priceTag = priceTag3
+        initialPriceStep = initialPrice3 / num3
+        initialPriceTag = initialPriceTag3
     }
     priceStep = (id == "increment") ? (priceStep * 1) : (priceStep * -1);
     priceTag.innerText = Math.round(parseInt(priceTag.innerText) + priceStep)
+    initialPriceStep = (id == "increment") ? (initialPriceStep * 1) : (initialPriceStep * -1);
+    initialPriceTag.innerText = Math.round(parseInt(initialPriceTag.innerText) + initialPriceStep)
 
 }
 

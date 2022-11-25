@@ -121,7 +121,6 @@
                                             step="1"
                                             value="1"
                                             id="stepper1"
-                                            readonly
                                           />
                                           <button class="increment" data-for="stepper1" id="increment1" onclick="stepper(this)">+</button>
                                         </div>
@@ -131,7 +130,7 @@
                                     </div>
                                     <div class="cart-item__func__buttons">
                                         <button class="img-button"><img src="images/like-button.svg" alt="like"></button>
-                                        <button class="img-button"><img src="images/delete-button.svg" alt="delete" data-for="cart-item1" onclick="deleteItem(this)"></button>
+                                        <button class="img-button"><img src="images/delete-button.svg" alt="delete" data-for="cart-item1" onclick="deleteItem(this)" id="delete-item1"></button>
                                     </div>
                                 </div>
                                 <div class="cart-item__price">
@@ -181,14 +180,13 @@
                                             step="1"
                                             value="200"
                                             id="stepper2"
-                                            readonly
                                           />
                                           <button class="increment" data-for="stepper2" id="increment2" onclick="stepper(this)">+</button>
                                         </div>
                                       </div>
                                     <div class="cart-item__func__buttons">
                                         <button class="img-button"><img src="images/like-button.svg" alt="like"></button>
-                                        <button class="img-button"><img src="images/delete-button.svg" alt="delete" data-for="cart-item2" onclick="deleteItem(this)"></button>
+                                        <button class="img-button"><img src="images/delete-button.svg" alt="delete" data-for="cart-item2" onclick="deleteItem(this)" id="delete-item2"></button>
                                     </div>
                                 </div>
                                 <div class="cart-item__price">
@@ -233,7 +231,6 @@
                                           step="1"
                                           value="2"
                                           id="stepper3"
-                                          readonly
                                         />
                                         <button class="increment" data-for="stepper3" id="increment3" onclick="stepper(this)">+</button>
                                       </div>
@@ -243,7 +240,7 @@
                                   </div>
                                   <div class="cart-item__func__buttons">
                                       <button class="img-button"><img src="images/like-button.svg" alt="like"></button>
-                                      <button class="img-button"><img src="images/delete-button.svg" alt="delete" data-for="cart-item3" onclick="deleteItem(this)"></button>
+                                      <button class="img-button"><img src="images/delete-button.svg" alt="delete" data-for="cart-item3" onclick="deleteItem(this)" id="delete-item3"></button>
                                   </div>
                               </div>
                               <div class="cart-item__price">
@@ -439,16 +436,16 @@
               <div class="form__main__content" style="gap: 8px">
                 <div class="form__main__header">
                   <div class="form__title">Итого</div>
-                  <div class="form__title"><span>2 101 063</span>  сом</div>
+                  <div class="form__title"><span id="items-bill-all">2 101 063</span>  сом</div>
                 </div>
                 <div class="form__subheader">
                   <div class="form__subheader__item">
-                    <div><span>4</span> товара</div>
-                    <div><span>2 302 048</span> сом</div>
+                    <div><span id="items-number-all">4</span> товара</div>
+                    <div><span id="initial-price-all">2 302 048</span> сом</div>
                   </div>
                   <div class="form__subheader__item">
                     <div>Скидка</div>
-                    <div><span>- 200985</span> сом</div>
+                    <div>- <span id="total-discount">200985</span> сом</div>
                   </div>
                   <div class="form__subheader__item">
                     <div>Доставка</div>
@@ -463,7 +460,7 @@
                     <div class="form__subtitle">Доставка в пункт выдачи</div>
                     <button class="img-button"><img src="images/edit-button.svg" alt="edit" onclick="toggleDeliveryPopup()"></button>
                   </div>
-                  <div style="padding: 0 24px">
+                  <div style="padding: 0 24px" id="address-all">
                     Бишкек, улмца Ахматбека Суюмбаева, 12/1
                   </div>
                   <div style="padding: 0 24px;
@@ -483,12 +480,12 @@
                   </div>
                 </div>
                 <div class="payment-card">
-                  <img src="images/payment/mir.svg" alt="payment card" id="card-img"> 
-                   <span id="card-number">1234 56** **** 1234</span> <span id="card-expiration-date">01/30</span>
+                  <img src="images/payment/mir.svg" alt="payment card" id="card-img-all"> 
+                   <span id="card-number-all">1234 56** **** 1234</span> <span id="card-expiration-date">01/30</span>
                 </div>
                 <div class="form__footer--grey-background" style="flex-direction: column; align-items: flex-start;">
                   <div class="checkbox-container" style="padding: 0; gap:8px">
-                    <input type="checkbox" name="payBefore" id="payBefore">
+                    <input type="checkbox" name="pay-before" id="pay-before-checkbox">
                     <label for="payBefore">Списать оплату сразу</label>
                   </div>
                   <div id="hint">Спишем оплату с карты при получении</div>
@@ -661,7 +658,7 @@
     <footer>
         © 2022 ООО «Товары и точка»
     </footer>
-    <script src="scripts/collapse-checkbox.js"></script>
+    <script src="scripts/managePriceAndAmount.js"></script>
     <script src="scripts/stepper.js"></script>
     <script src="scripts/forms-images.js"></script>
     <script src="scripts/manageItems.js"></script>
