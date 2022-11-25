@@ -62,6 +62,7 @@
 }
 .form__main__content__item {
   display: flex;
+  width: 100%;
   flex-direction: row;
   align-items: flex-start;
   padding: 0px 24px;
@@ -179,3 +180,41 @@ input[type="checkbox"].transparent-checkbox:checked + label::before {
   border-color: transparent;
 }
 /** Конец кастомного чекбокса **/
+
+/* form input  */
+.form__input-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 2px;
+  flex-grow: 1;
+}
+label.form__label {
+  display: none;
+}
+.form__error {
+  display: none;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  color: #f55123;
+}
+input.form__input {
+  border: none;
+  width: 100%;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+input.form__input::placeholder {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #a0a0a4;
+}
+input.form__input:focus {
+  outline: none;
+}
+input.form__input--error {
+  border-bottom: 1px solid #f55123;
+}
+/* form input  */

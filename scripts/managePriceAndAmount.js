@@ -4,40 +4,31 @@ let openedButton
 let closedButton
 const openedHeader = document.getElementById("cart__items__header--opened")
 const closedHeader = document.getElementById("cart__items__header--closed")
-const priceTag1 = document.getElementById("price1")
-const priceTag2 = document.getElementById("price2")
-const priceTag3 = document.getElementById("price3")
-const stepper1 = document.getElementById("stepper1")
-const stepper2 = document.getElementById("stepper2")
-const stepper3 = document.getElementById("stepper3")
+
+const priceTags = document.querySelectorAll(".price")
+
+const steppers = document.querySelectorAll(".incrementor-input")
+
 const itemsNumber = document.getElementById("items-number")
 const itemsNumberAll = document.getElementById("items-number-all")
 const itemsBill = document.getElementById("items-bill")
 const itemsBillAll = document.getElementById("items-bill-all")
 
-const checkbox1 = document.getElementById("checkbox-item1")
-const checkbox2 = document.getElementById("checkbox-item2")
-const checkbox3 = document.getElementById("checkbox-item3")
+const checkboxes = document.querySelectorAll('input[name="checkbox-item"]')
+
 const checkboxAll = document.getElementById("checkbox-items-All")
-const item1 = document.getElementById("cart-item1")
-const item2 = document.getElementById("cart-item2")
-const item3 = document.getElementById("cart-item3")
 
-const decrementBtn1 = document.getElementById("decrement1")
-const decrementBtn2 = document.getElementById("decrement2")
-const decrementBtn3 = document.getElementById("decrement3")
-const incrementBtn1 = document.getElementById("increment1")
-const incrementBtn2 = document.getElementById("increment2")
-const incrementBtn3 = document.getElementById("increment3")
+const items = document.querySelectorAll(".cart-item")
 
-const deleteItemBtn1 = document.getElementById("delete-item1")
-const deleteItemBtn2 = document.getElementById("delete-item2")
-const deleteItemBtn3 = document.getElementById("delete-item3")
+const decrementButtons = document.querySelectorAll(".decrement-button")
 
-const initialPriceTag1 = document.getElementById("initial-price1")
-const initialPriceTag2 = document.getElementById("initial-price2")
-const initialPriceTag3 = document.getElementById("initial-price3")
+const incrementButtons = document.querySelectorAll(".increment-button")
+
+const deleteCartItemButtons = document.querySelectorAll(".delete-cart-item")
+
+const initialPriceTags = document.querySelectorAll(".initial-price")
 const initialPriceTagAll = document.getElementById("initial-price-all")
+
 const orderBtn = document.getElementById("order-button-ok")
 const totalDiscountTag = document.getElementById("total-discount")
 const payBeforeCheckbox = document.getElementById("pay-before-checkbox")
@@ -50,19 +41,23 @@ const payBeforeCheckbox = document.getElementById("pay-before-checkbox")
 
 
 function calculatePriceAndAmount() {
-    const num1 = (checkbox1.checked && item1.style.display !== "none") ? parseInt(stepper1.getAttribute("value")) : 0
-    const num2 = (checkbox2.checked && item2.style.display !== "none") ? parseInt(stepper2.getAttribute("value")) : 0
-    const num3 = (checkbox3.checked && item3.style.display !== "none") ? parseInt(stepper3.getAttribute("value")) : 0
+    const nums = []
+    const prices = []
+    for (let i = 0; i < items.length; i++) {
+        nums.push((checkboxes[i].checked && items[i].style.display !== "none") ? parseInt(steppers[i].getAttribute("value")) : 0)
+        prices.push((checkboxes[i].checked && items[i].style.display !== "none") ? parseInt(priceTags[i].innerText) : 0)
+    }
 
-    const price1 = (checkbox1.checked && item1.style.display !== "none") ? parseInt(priceTag1.innerText) : 0
-    const price2 = (checkbox2.checked && item2.style.display !== "none") ? parseInt(priceTag2.innerText) : 0
-    const price3 = (checkbox3.checked && item3.style.display !== "none") ? parseInt(priceTag3.innerText) : 0
+    let itemsNumberValue = 0, itemsBillValue = 0
+    for (let i = 0; i < items.length; i++) {
+        itemsNumberValue += nums[i]
+        itemsBillValue += prices[i]
+    }
 
-
-    itemsNumber.innerText = num1 + num2 + num3
-    itemsNumberAll.innerText = num1 + num2 + num3
-    itemsBill.innerText = price1 + price2 + price3
-    itemsBillAll.innerText = price1 + price2 + price3
+    itemsNumber.innerText = itemsNumberValue
+    itemsNumberAll.innerText = itemsNumberValue
+    itemsBill.innerText = itemsBillValue
+    itemsBillAll.innerText = itemsBillValue
 
     if (payBeforeCheckbox.checked) {
         orderBtn.innerText = `Оплатить ${itemsBillAll.innerText} сом`
@@ -70,20 +65,27 @@ function calculatePriceAndAmount() {
 }
 
 function calculateDiscount() {
-    const price1 = (checkbox1.checked && item1.style.display !== "none") ? parseInt(priceTag1.innerText) : 0
-    const price2 = (checkbox2.checked && item2.style.display !== "none") ? parseInt(priceTag2.innerText) : 0
-    const price3 = (checkbox3.checked && item3.style.display !== "none") ? parseInt(priceTag3.innerText) : 0
+    const prices = []
+    const initialPrices = []
 
-    const initialPrice1 = (checkbox1.checked && item1.style.display !== "none") ? parseInt(initialPriceTag1.innerText) : 0
-    const initialPrice2 = (checkbox2.checked && item2.style.display !== "none") ? parseInt(initialPriceTag2.innerText) : 0
-    const initialPrice3 = (checkbox3.checked && item3.style.display !== "none") ? parseInt(initialPriceTag3.innerText) : 0
+    for (let i = 0; i < items.length; i++) {
+        prices.push((checkboxes[i].checked && items[i].style.display !== "none") ? parseInt(priceTags[i].innerText) : 0)
+        initialPrices.push((checkboxes[i].checked && items[i].style.display !== "none") ? parseInt(initialPriceTags[i].innerText) : 0)
+    }
 
-    const discount1 = initialPrice1 - price1
-    const discount2 = initialPrice2 - price2
-    const discount3 = initialPrice3 - price3
+    const discounts = []
 
-    totalDiscountTag.innerText = discount1 + discount2 + discount3
-    initialPriceTagAll.innerText = initialPrice1 + initialPrice2 + initialPrice3
+    for (let i = 0; i < items.length; i++) {
+        discounts.push(initialPrices[i] - prices[i])
+    }
+    let discountValue = 0, initialPriceValue = 0
+    for (let i = 0; i < items.length; i++) {
+        discountValue += discounts[i]
+        initialPriceValue += initialPrices[i]
+
+    }
+    totalDiscountTag.innerText = discountValue
+    initialPriceTagAll.innerText = initialPriceValue
 
 
 
@@ -95,9 +97,9 @@ calculateDiscount()
 
 checkboxAll.addEventListener('change', function () {
     if (this.checked) {
-        checkbox1.checked = true
-        checkbox2.checked = true
-        checkbox3.checked = true
+        checkboxes.forEach(checkbox => {
+            checkbox.checked = true
+        })
     }
 });
 
@@ -116,65 +118,33 @@ payBeforeCheckbox.addEventListener('change', (event) => {
 
 })
 
-checkbox1.addEventListener('change', function () {
-    calculatePriceAndAmount()
-    calculateDiscount()
-});
-checkbox2.addEventListener('change', function () {
-    calculatePriceAndAmount()
-    calculateDiscount()
-});
-checkbox3.addEventListener('change', function () {
-    calculatePriceAndAmount()
-    calculateDiscount()
-});
-stepper1.addEventListener('input', function () {
-    calculatePriceAndAmount()
-    calculateDiscount()
-});
-stepper2.addEventListener('input', function () {
-    calculatePriceAndAmount()
-    calculateDiscount()
-});
-stepper3.addEventListener('input', function () {
-    calculatePriceAndAmount()
-    calculateDiscount()
-});
-incrementBtn1.addEventListener("click", () => {
-    calculatePriceAndAmount()
-    calculateDiscount()
+checkboxes.forEach(checkbox => {
+    checkbox.addEventListener('change', function () {
+        calculatePriceAndAmount()
+        calculateDiscount()
+    });
 })
-incrementBtn2.addEventListener("click", () => {
-    calculatePriceAndAmount()
-    calculateDiscount()
+
+incrementButtons.forEach(incrementBtn => {
+    incrementBtn.addEventListener("click", () => {
+        calculatePriceAndAmount()
+        calculateDiscount()
+    })
 })
-incrementBtn3.addEventListener("click", () => {
-    calculatePriceAndAmount()
-    calculateDiscount()
+
+
+decrementButtons.forEach(decrementBtn => {
+    decrementBtn.addEventListener("click", () => {
+        calculatePriceAndAmount()
+        calculateDiscount()
+    })
 })
-decrementBtn1.addEventListener("click", () => {
-    calculatePriceAndAmount()
-    calculateDiscount()
-})
-decrementBtn2.addEventListener("click", () => {
-    calculatePriceAndAmount()
-    calculateDiscount()
-})
-decrementBtn3.addEventListener("click", () => {
-    calculatePriceAndAmount()
-    calculateDiscount()
-})
-deleteItemBtn1.addEventListener("click", () => {
-    calculatePriceAndAmount()
-    calculateDiscount()
-})
-deleteItemBtn2.addEventListener("click", () => {
-    calculatePriceAndAmount()
-    calculateDiscount()
-})
-deleteItemBtn3.addEventListener("click", () => {
-    calculatePriceAndAmount()
-    calculateDiscount()
+
+deleteCartItemButtons.forEach(deleteCartItemButton => {
+    deleteCartItemButton.addEventListener("click", () => {
+        calculatePriceAndAmount()
+        calculateDiscount()
+    })
 })
 
 

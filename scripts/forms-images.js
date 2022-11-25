@@ -9,16 +9,19 @@ const dateDeliveryItem2 = document.getElementById("date-delivery-item2")
 
 
 function checkCartItems() {
-    const num1 = (checkbox1.checked && item1.style.display !== "none") ? parseInt(stepper1.getAttribute("value")) : 0
-    const num2 = (checkbox2.checked && item2.style.display !== "none") ? parseInt(stepper2.getAttribute("value")) : 0
-    const num3 = (checkbox3.checked && item3.style.display !== "none") ? parseInt(stepper3.getAttribute("value")) : 0
-    if (num1 === 0) {
+
+    const nums = []
+    for (let i = 0; i < items.length; i++) {
+        nums.push((checkboxes[i].checked && items[i].style.display !== "none") ? parseInt(steppers[i].getAttribute("value")) : 0)
+    }
+
+    if (nums[0] === 0) {
         itemImg1.style.display = "none"
     }
     else {
         itemImg1.style.display = "block"
     }
-    if (num2 === 0) {
+    if (nums[1] === 0) {
         itemImg2.style.display = "none"
         itemImg21.style.display = "none"
     }
@@ -27,7 +30,7 @@ function checkCartItems() {
         itemImg21.style.display = "block"
     }
 
-    if (num3 === 0) {
+    if (nums[2] === 0) {
         itemImg3.style.display = "none"
     }
     else {
@@ -48,16 +51,12 @@ function checkCartItems() {
     }
 
 }
+checkboxes.forEach(checkbox => {
+    checkbox.addEventListener('change', function () {
+        checkCartItems()
+    });
+})
 
-checkbox1.addEventListener('change', function () {
-    checkCartItems()
-});
-checkbox2.addEventListener('change', function () {
-    checkCartItems()
-});
-checkbox3.addEventListener('change', function () {
-    checkCartItems()
-});
 checkboxAll.addEventListener('change', function () {
     checkCartItems()
 });

@@ -72,6 +72,18 @@ input[type="checkbox"] {
   gap: 16px;
   isolation: isolate;
 }
+.cart-item--missing{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 16px;
+  isolation: isolate;
+  color: #a0a0a4;
+
+}
 .checkbox-container {
   display: flex;
   flex-direction: row;
@@ -278,9 +290,7 @@ input::-webkit-inner-spin-button {
 /* details */
 
 /* missing items */
-#cart-items--missing {
-  color: #a0a0a4;
-}
+
 #cart-items--missing .item-img {
   filter: grayscale(100%);
 }

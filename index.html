@@ -90,7 +90,7 @@
                         <!-- item 1 -->
                         <div class="cart-item" id="cart-item1">
                             <div class="checkbox-container">
-                                <input type="checkbox" id="checkbox-item1" name="checkbox-item1" checked>
+                                <input type="checkbox" id="checkbox-item1" name="checkbox-item" value="Футболка UZcotton мужская" checked>
                                 <label for="checkbox-item1" class="checkbox-container">
                                   <div class="cart-item__desc-uniter">
                                     <img class="item-img" src="images/item1.svg" alt="item image">
@@ -118,6 +118,7 @@
                                             min="1"
                                             max="2"
                                             step="1"
+                                            readonly
                                             value="1"
                                             id="stepper1"
                                           />
@@ -129,18 +130,18 @@
                                     </div>
                                     <div class="cart-item__func__buttons">
                                         <button class="img-button"><img src="images/like-button.svg" alt="like"></button>
-                                        <button class="img-button"><img src="images/delete-button.svg" alt="delete" data-for="cart-item1" onclick="deleteItem(this)" id="delete-item1"></button>
+                                        <button class="img-button delete-cart-item" data-for="cart-item1" onclick="deleteItem(this)" id="delete-item1"><img src="images/delete-button.svg" alt="delete"></button>
                                     </div>
                                 </div>
                                 <div class="cart-item__price">
                                     <div class="cart-item__price__text">
-                                        <div class="font-20--bold" id="price1">
+                                        <div class="font-20--bold price" id="price1">
                                             522
                                         </div>
                                         <div class="font-16--bold"> сом</div>
                                     </div>
                                     <div class="font-13--grey--line-through">
-                                        <span id="initial-price1">1051</span> сом
+                                        <span id="initial-price1" class="initial-price">1051</span> сом
                                     </div>
                                 </div>
                             </div>
@@ -148,7 +149,7 @@
                         <!-- item 2 -->
                         <div class="cart-item" id="cart-item2">
                             <div class="checkbox-container">
-                                <input type="checkbox" id="checkbox-item2" name="checkbox-item2" checked>
+                                <input type="checkbox" id="checkbox-item2" name="checkbox-item" value="Силиконовый чехол картхолдер (отверстия) для карт, прозрачный кейс бампер на Apple Iphone XR, MobiSafe" checked>
                                 <label for="checkbox-item2" class="checkbox-container">
                                   <div class="cart-item__desc-uniter">
                                     <img class="item-img" src="images/item2.svg" alt="item image">
@@ -177,6 +178,7 @@
                                             min="1"
                                             max="1000"
                                             step="1"
+                                            readonly
                                             value="200"
                                             id="stepper2"
                                           />
@@ -185,18 +187,18 @@
                                       </div>
                                     <div class="cart-item__func__buttons">
                                         <button class="img-button"><img src="images/like-button.svg" alt="like"></button>
-                                        <button class="img-button"><img src="images/delete-button.svg" alt="delete" data-for="cart-item2" onclick="deleteItem(this)" id="delete-item2"></button>
+                                        <button class="img-button delete-cart-item" data-for="cart-item2" onclick="deleteItem(this)" id="delete-item2"><img src="images/delete-button.svg" alt="delete"></button>
                                     </div>
                                 </div>
                                 <div class="cart-item__price">
                                     <div class="cart-item__price__text">
-                                        <div class="font-20--bold" id="price2">
+                                        <div class="font-20--bold price" id="price2">
                                             2100047
                                         </div>
                                         <div class="font-16--bold"> сом</div>
                                     </div>
                                     <div class="font-13--grey--line-through">
-                                        <span id="initial-price2">2300047</span> сом
+                                        <span id="initial-price2" class="initial-price">2300047</span> сом
                                     </div>
                                 </div>
                             </div>
@@ -204,7 +206,7 @@
                          <!-- item 3 -->
                          <div class="cart-item" id="cart-item3">
                           <div class="checkbox-container">
-                              <input type="checkbox" id="checkbox-item3" name="checkbox-item3" checked>
+                              <input type="checkbox" id="checkbox-item3" name="checkbox-item" value="Карандаши" checked>
                               <label for="checkbox-item3" class="checkbox-container">
                                 <div class="cart-item__desc-uniter">
                                   <img class="item-img" src="images/item3.svg" alt="item image">
@@ -229,6 +231,7 @@
                                           max="2"
                                           step="1"
                                           value="2"
+                                          readonly
                                           id="stepper3"
                                         />
                                         <button class="increment-button" data-for="stepper3" id="increment3" onclick="stepper(this)">+</button>
@@ -239,18 +242,18 @@
                                   </div>
                                   <div class="cart-item__func__buttons">
                                       <button class="img-button"><img src="images/like-button.svg" alt="like"></button>
-                                      <button class="img-button"><img src="images/delete-button.svg" alt="delete" data-for="cart-item3" onclick="deleteItem(this)" id="delete-item3"></button>
+                                      <button class="img-button delete-cart-item" data-for="cart-item3" onclick="deleteItem(this)" id="delete-item3"><img src="images/delete-button.svg" alt="delete"></button>
                                   </div>
                               </div>
                               <div class="cart-item__price">
                                   <div class="cart-item__price__text">
-                                      <div class="font-20--bold" id="price3">
+                                      <div class="font-20--bold price" id="price3">
                                           494
                                       </div>
                                       <div class="font-16--bold"> сом</div>
                                   </div>
                                   <div class="font-13--grey--line-through">
-                                      <span id="initial-price3">950</span> сом
+                                      <span id="initial-price3" class="initial-price">950</span> сом
                                   </div>
                               </div>
                           </div>
@@ -271,7 +274,7 @@
                   <hr>
                   <div class="cart__items__main" id="cart-items--missing">
                       <!-- item 1 -->
-                      <div class="cart-item" id="missing-item1">
+                      <div class="cart-item--missing" id="missing-item1">
                           <div class="checkbox-container">
                             <div class="cart-item__desc-uniter">
                               <img class="item-img" src="images/item1.svg" alt="item image">
@@ -289,13 +292,13 @@
                               <div class="cart-item__func">
                                   <div class="cart-item__func__buttons">
                                       <button class="img-button"><img src="images/like-button.svg" alt="like"></button>
-                                      <button class="img-button"><img src="images/delete-button.svg" alt="delete" data-for="missing-item1" onclick="deleteItem(this)"></button>
+                                      <button class="img-button" data-for="missing-item1" onclick="deleteItem(this)"><img src="images/delete-button.svg" alt="delete"></button>
                                   </div>
                               </div>
                           </div>
                       </div>
                       <!-- item 2 -->
-                      <div class="cart-item" id="missing-item2">
+                      <div class="cart-item--missing" id="missing-item2">
                           <div class="checkbox-container">
                             <div class="cart-item__desc-uniter">
                               <img class="item-img" src="images/item2.svg" alt="item image">
@@ -313,13 +316,13 @@
                               <div class="cart-item__func">
                                   <div class="cart-item__func__buttons">
                                       <button class="img-button"><img src="images/like-button.svg" alt="like"></button>
-                                      <button class="img-button"><img src="images/delete-button.svg" alt="delete" data-for="missing-item2" onclick="deleteItem(this)"></button>
+                                      <button class="img-button" data-for="missing-item2" onclick="deleteItem(this)"><img src="images/delete-button.svg" alt="delete"></button>
                                   </div>
                               </div>
                           </div>
                       </div>
                        <!-- item 3 -->
-                       <div class="cart-item" id="missing-item3">
+                       <div class="cart-item--missing" id="missing-item3">
                         <div class="checkbox-container">
                           <div class="cart-item__desc-uniter">
                             <img class="item-img" src="images/item3.svg" alt="item image">
@@ -332,7 +335,7 @@
                             <div class="cart-item__func">
                                 <div class="cart-item__func__buttons">
                                     <button class="img-button"><img src="images/like-button.svg" alt="like"></button>
-                                    <button class="img-button"><img src="images/delete-button.svg" alt="delete" data-for="missing-item3" onclick="deleteItem(this)"></button>
+                                    <button class="img-button" data-for="missing-item3" onclick="deleteItem(this)"><img src="images/delete-button.svg" alt="delete"></button>
                                 </div>
                             </div>
                         </div>
@@ -421,15 +424,43 @@
                 </div>
               </div>
             </div>
-            <!--payment form-->
+            <!--user form-->
             <div class="form">
               <div class="form__main">
                 <div class="form__main__header">
                   <div class="font-24--bold">Получатель</div>
                 </div>
-                <div class="form__main__content">
-                  
-                </div>
+                <form class="form__main__content">
+                  <div class="form__main__content__item">
+                    <div class="form__input-container">
+                      <label for="name-input" class="form__label font-13--grey" id="name-label">Имя</label>
+                      <input type="text" id="name-input" name="name-input" class="form__input" placeholder="Имя" data-for="name-label">
+                      <div class="form__error" id="empty-name">Укажите имя</div>
+                    </div>
+                    <div class="form__input-container">
+                      <label for="surname-input" class="form__label font-13--grey" id="surname-label">Фамилия</label>
+                      <input type="text" id="surname-input" name="surname-input" class="form__input" placeholder="Фамилия" data-for="surname-label">
+                      <div class="form__error" id="empty-surname">Введите фамилию</div>
+                    </div>
+                  </div>
+                  <div class="form__main__content__item">
+                    <div class="form__input-container">
+                      <label for="email-input" class="form__label font-13--grey" id="email-label">Почта</label>
+                      <input type="email" id="email-input" name="email-input" class="form__input" placeholder="Почта" data-for="email-label">
+                      <div class="form__error" id="empty-email">Укажите электронную почту</div>
+                    </div>
+                    <div class="form__input-container">
+                      <label for="tel-input" class="form__label font-13--grey" id="tel-label">Телефон</label>
+                      <input type="text" id="tel-input" name="tel-input" class="form__input" placeholder="Телефон" data-for="tel-label">
+                      <div class="form__error" id="empty-tel">Укажите номер телефона</div>
+                    </div>
+                    <div class="form__input-container">
+                      <label for="inn-input" class="form__label font-13--grey" id="inn-label">ИНН</label>
+                      <input type="text" id="inn-input" name="inn-input" class="form__input" placeholder="ИНН" data-for="inn-label">
+                      <div class="form__error" id="empty-inn">Укажите ИНН</div>
+                    </div>
+                  </div>
+                </form>
               </div>
             </div>
 
@@ -501,8 +532,6 @@
                   <div id="hint">Спишем оплату с карты при получении</div>
                 </div>
               </div>
-
-         
             </div>
             <div class="form__footer--column">
               <button id="order-button-ok" class="button-ok" style="width: calc(100% - 48px);">Заказать</button>
@@ -544,7 +573,7 @@
                     <div> <img src="images/star.svg" alt="star"> 4.99  <span class="font-13--grey"> Пункт выдачи</span> </div>
                 </label>
               </div>
-              <button class="img-button"><img src="images/delete-button.svg" alt="delete" data-for="popup-issue-point-item1" onclick="deleteItem(this)"></button>
+              <button class="img-button" data-for="popup-issue-point-item1" onclick="deleteItem(this)"><img src="images/delete-button.svg" alt="delete"></button>
           </div>
           <div class="popup__content__item font-16" id="popup-issue-point-item2">
               <div class="checkbox-container--baseline">
@@ -554,7 +583,7 @@
                     <div> <img src="images/star.svg" alt="star"> 4.99  <span class="font-13--grey"> Пункт выдачи</span> </div>
                 </label>
               </div>
-              <button class="img-button"><img src="images/delete-button.svg" alt="delete" data-for="popup-issue-point-item2" onclick="deleteItem(this)"></button>
+              <button class="img-button" data-for="popup-issue-point-item2" onclick="deleteItem(this)"><img src="images/delete-button.svg" alt="delete"></button>
           </div>
           <div class="popup__content__item font-16" id="popup-issue-point-item3">
               <div class="checkbox-container--baseline">
@@ -564,7 +593,7 @@
                     <div> <img src="images/star.svg" alt="star"> 4.99  <span class="font-13--grey"> Пункт выдачи</span> </div>
                 </label>
               </div>
-              <button class="img-button"><img src="images/delete-button.svg" alt="delete" data-for="popup-issue-point-item3" onclick="deleteItem(this)"></button>
+              <button class="img-button" data-for="popup-issue-point-item3" onclick="deleteItem(this)"><img src="images/delete-button.svg" alt="delete"></button>
           </div>
         </div>
         <!--Courier-->
@@ -674,5 +703,6 @@
     <script src="scripts/manageItems.js"></script>
     <script src="scripts/popup.js"></script>
     <script src="scripts/tab-switch.js"></script>
+    <script src="scripts/form-inputs.js"></script>
   </body>
 </html>

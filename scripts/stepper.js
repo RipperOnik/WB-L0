@@ -1,77 +1,38 @@
-
-
-const num1 = (checkbox1.checked && item1.style.display !== "none") ? parseInt(stepper1.getAttribute("value")) : 0
-const num2 = (checkbox2.checked && item2.style.display !== "none") ? parseInt(stepper2.getAttribute("value")) : 0
-const num3 = (checkbox3.checked && item3.style.display !== "none") ? parseInt(stepper3.getAttribute("value")) : 0
-
-const price1 = (checkbox1.checked && item1.style.display !== "none") ? parseInt(priceTag1.innerText) : 0
-const price2 = (checkbox2.checked && item2.style.display !== "none") ? parseInt(priceTag2.innerText) : 0
-const price3 = (checkbox3.checked && item3.style.display !== "none") ? parseInt(priceTag3.innerText) : 0
-
-const initialPrice1 = (checkbox1.checked && item1.style.display !== "none") ? parseInt(initialPriceTag1.innerText) : 0
-const initialPrice2 = (checkbox1.checked && item1.style.display !== "none") ? parseInt(initialPriceTag2.innerText) : 0
-const initialPrice3 = (checkbox1.checked && item1.style.display !== "none") ? parseInt(initialPriceTag3.innerText) : 0
+const nums = []
+const prices = []
+const initialPrices = []
+const stepperIds = ["stepper1", "stepper2", "stepper3"]
+for (let i = 0; i < items.length; i++) {
+    nums.push((checkboxes[i].checked && items[i].style.display !== "none") ? parseInt(steppers[i].getAttribute("value")) : 0)
+    prices.push((checkboxes[i].checked && items[i].style.display !== "none") ? parseInt(priceTags[i].innerText) : 0)
+    initialPrices.push((checkboxes[i].checked && items[i].style.display !== "none") ? parseInt(initialPriceTags[i].innerText) : 0)
+}
 
 
 
 
 
 function manageButtons() {
-    if (stepper1.value === stepper1.min) {
-        decrementBtn1.style.opacity = 0.2
-        decrementBtn1.style.cursor = "default"
-        incrementBtn1.style.opacity = 1
-        incrementBtn1.style.cursor = "pointer"
-    }
-    else if (stepper1.value === stepper1.max) {
-        incrementBtn1.style.opacity = 0.2
-        incrementBtn1.style.cursor = "default"
-        decrementBtn1.style.opacity = 1
-        decrementBtn1.style.cursor = "pointer"
-    }
-    else {
-        decrementBtn1.style.opacity = 1
-        decrementBtn1.style.cursor = "pointer"
-        incrementBtn1.style.opacity = 1
-        incrementBtn1.style.cursor = "pointer"
-    }
 
-    if (stepper2.value === stepper2.min) {
-        decrementBtn2.style.opacity = 0.2
-        decrementBtn2.style.cursor = "default"
-        incrementBtn2.style.opacity = 1
-        incrementBtn2.style.cursor = "pointer"
-    }
-    else if (stepper2.value === stepper2.max) {
-        incrementBtn2.style.opacity = 0.2
-        incrementBtn2.style.cursor = "default"
-        decrementBtn2.style.opacity = 1
-        decrementBtn2.style.cursor = "pointer"
-    }
-    else {
-        decrementBtn2.style.opacity = 1
-        decrementBtn2.style.cursor = "pointer"
-        incrementBtn2.style.opacity = 1
-        incrementBtn2.style.cursor = "pointer"
-    }
-
-    if (stepper3.value === stepper3.min) {
-        decrementBtn3.style.opacity = 0.2
-        decrementBtn3.style.cursor = "default"
-        incrementBtn3.style.opacity = 1
-        incrementBtn3.style.cursor = "pointer"
-    }
-    else if (stepper3.value === stepper3.max) {
-        incrementBtn3.style.opacity = 0.2
-        incrementBtn3.style.cursor = "default"
-        decrementBtn3.style.opacity = 1
-        decrementBtn3.style.cursor = "pointer"
-    }
-    else {
-        decrementBtn3.style.opacity = 1
-        decrementBtn3.style.cursor = "pointer"
-        incrementBtn3.style.opacity = 1
-        incrementBtn3.style.cursor = "pointer"
+    for (let i = 0; i < steppers.length; i++) {
+        if (steppers[i].value === steppers[i].min) {
+            decrementButtons[i].style.opacity = 0.2
+            decrementButtons[i].style.cursor = "default"
+            incrementButtons[i].style.opacity = 1
+            incrementButtons[i].style.cursor = "pointer"
+        }
+        else if (steppers[i].value === steppers[i].max) {
+            incrementButtons[i].style.opacity = 0.2
+            incrementButtons[i].style.cursor = "default"
+            decrementButtons[i].style.opacity = 1
+            decrementButtons[i].style.cursor = "pointer"
+        }
+        else {
+            decrementButtons[i].style.opacity = 1
+            decrementButtons[i].style.cursor = "pointer"
+            incrementButtons[i].style.opacity = 1
+            incrementButtons[i].style.cursor = "pointer"
+        }
     }
 }
 
@@ -88,7 +49,6 @@ function stepper(btn) {
     const max = myInput.getAttribute("max");
     const step = myInput.getAttribute("step");
     const val = myInput.getAttribute("value");
-    console.log(id);
     const calcStep = (id == "increment-button") ? (step * 1) : (step * -1);
     const newValue = parseInt(val) + calcStep;
 
@@ -102,24 +62,15 @@ function stepper(btn) {
         return
     }
     let priceStep, priceTag, initialPriceStep, initialPriceTag
-    if (inputId === "stepper1") {
-        priceStep = price1 / num1
-        priceTag = priceTag1
-        initialPriceStep = initialPrice1 / num1
-        initialPriceTag = initialPriceTag1
 
-    }
-    else if (inputId === "stepper2") {
-        priceStep = price2 / num2
-        priceTag = priceTag2
-        initialPriceStep = initialPrice2 / num2
-        initialPriceTag = initialPriceTag2
-    }
-    else if (inputId === "stepper3") {
-        priceStep = price3 / num3
-        priceTag = priceTag3
-        initialPriceStep = initialPrice3 / num3
-        initialPriceTag = initialPriceTag3
+    for (let i = 0; i < items.length; i++) {
+        if (inputId === stepperIds[i]) {
+            priceStep = prices[i] / nums[i]
+            priceTag = priceTags[i]
+            initialPriceStep = initialPrices[i] / nums[i]
+            initialPriceTag = initialPriceTags[i]
+            break
+        }
     }
     priceStep = (id == "increment-button") ? (priceStep * 1) : (priceStep * -1);
     priceTag.innerText = Math.round(parseInt(priceTag.innerText) + priceStep)
