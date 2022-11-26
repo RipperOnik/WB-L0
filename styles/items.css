@@ -290,6 +290,10 @@ input::-webkit-inner-spin-button {
   font-size: 14px;
   line-height: 20px;
   display: none;
+  position: absolute !important;
+  left: 5px;
+  top: 78px;
+  z-index: 1 !important;
 }
 
 
