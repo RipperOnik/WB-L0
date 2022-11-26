@@ -432,32 +432,37 @@
                 </div>
                 <form class="form__main__content">
                   <div class="form__main__content__item">
+                    <!--Name-->
                     <div class="form__input-container">
                       <label for="name-input" class="form__label font-13--grey" id="name-label">Имя</label>
-                      <input type="text" id="name-input" name="name-input" class="form__input" placeholder="Имя" data-for="name-label">
-                      <div class="form__error" id="empty-name">Укажите имя</div>
+                      <input type="text" id="name-input" name="name-input" class="form__input" placeholder="Имя" data-label="name-label" data-error="name-error-label">
+                      <div class="form__error" id="name-error-label"></div>
                     </div>
+                    <!--Surname-->
                     <div class="form__input-container">
                       <label for="surname-input" class="form__label font-13--grey" id="surname-label">Фамилия</label>
-                      <input type="text" id="surname-input" name="surname-input" class="form__input" placeholder="Фамилия" data-for="surname-label">
-                      <div class="form__error" id="empty-surname">Введите фамилию</div>
+                      <input type="text" id="surname-input" name="surname-input" class="form__input" placeholder="Фамилия" data-label="surname-label" data-error="surname-error-label">
+                      <div class="form__error" id="surname-error-label"></div>
                     </div>
                   </div>
                   <div class="form__main__content__item">
+                    <!--Email-->
                     <div class="form__input-container">
                       <label for="email-input" class="form__label font-13--grey" id="email-label">Почта</label>
-                      <input type="email" id="email-input" name="email-input" class="form__input" placeholder="Почта" data-for="email-label">
-                      <div class="form__error" id="empty-email">Укажите электронную почту</div>
+                      <input type="email" id="email-input" name="email-input" class="form__input" placeholder="Почта" data-label="email-label" data-error="email-error-label">
+                      <div class="form__error" id="email-error-label"></div>
                     </div>
+                    <!--Tel-->
                     <div class="form__input-container">
                       <label for="tel-input" class="form__label font-13--grey" id="tel-label">Телефон</label>
-                      <input type="text" id="tel-input" name="tel-input" class="form__input" placeholder="Телефон" data-for="tel-label">
-                      <div class="form__error" id="empty-tel">Укажите номер телефона</div>
+                      <input type="tel" id="tel-input" name="tel-input" class="form__input" placeholder="Телефон" data-label="tel-label" data-error="tel-error-label">
+                      <div class="form__error" id="tel-error-label"></div>
                     </div>
+                    <!--Inn-->
                     <div class="form__input-container">
                       <label for="inn-input" class="form__label font-13--grey" id="inn-label">ИНН</label>
-                      <input type="text" id="inn-input" name="inn-input" class="form__input" placeholder="ИНН" data-for="inn-label">
-                      <div class="form__error" id="empty-inn">Укажите ИНН</div>
+                      <input type="text" id="inn-input" name="inn-input" class="form__input" placeholder="ИНН" data-label="inn-label" data-error="inn-error-label">
+                      <div class="form__error" id="inn-error-label"></div>
                     </div>
                   </div>
                 </form>

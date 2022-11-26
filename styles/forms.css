@@ -191,10 +191,10 @@ input[type="checkbox"].transparent-checkbox:checked + label::before {
   flex-grow: 1;
 }
 label.form__label {
-  display: none;
+  visibility: hidden;
 }
 .form__error {
-  display: none;
+  visibility: hidden;
   font-weight: 400;
   font-size: 12px;
   line-height: 14px;
@@ -216,5 +216,6 @@ input.form__input:focus {
 }
 input.form__input--error {
   border-bottom: 1px solid #f55123;
+  color: #f55123;
 }
 /* form input  */
