@@ -145,6 +145,7 @@ formPhoneInput.addEventListener('keydown', event => {
         event.preventDefault()
     }
 })
+
 let prevLength = 0
 // add space between number groups
 formPhoneInput.addEventListener('input', event => {

@@ -61,21 +61,25 @@ function stepper(btn) {
     else {
         return
     }
-    let priceStep, priceTag, initialPriceStep, initialPriceTag
+    let priceStep, priceTag, initialPriceStep, initialPriceTag, initialPriceTagMobile, priceTagMobile
 
     for (let i = 0; i < items.length; i++) {
         if (inputId === stepperIds[i]) {
             priceStep = prices[i] / nums[i]
             priceTag = priceTags[i]
+            priceTagMobile = priceTagsMobile[i]
             initialPriceStep = initialPrices[i] / nums[i]
             initialPriceTag = initialPriceTags[i]
+            initialPriceTagMobile = initialPriceTagsMobile[i]
             break
         }
     }
     priceStep = (id == "increment-button") ? (priceStep * 1) : (priceStep * -1);
     priceTag.innerText = Math.round(parseInt(priceTag.innerText) + priceStep)
+    priceTagMobile.innerText = Math.round(parseInt(priceTagMobile.innerText) + priceStep)
     initialPriceStep = (id == "increment-button") ? (initialPriceStep * 1) : (initialPriceStep * -1);
     initialPriceTag.innerText = Math.round(parseInt(initialPriceTag.innerText) + initialPriceStep)
+    initialPriceTagMobile.innerText = Math.round(parseInt(initialPriceTagMobile.innerText) + initialPriceStep)
 
 }
 

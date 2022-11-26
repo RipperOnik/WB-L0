@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="styles/popup.css">
     <link rel="stylesheet" href="styles/fonts.css">
     <link rel="stylesheet" href="styles/tooltip.css">
+    <link rel="stylesheet" href="styles/customInputs.css">
     <title>Document</title>
   </head>
   <body>
@@ -69,8 +70,9 @@
       </div>
     </header>
     <main>
-        <!-- left -->
-        <div class="left">
+        <div class="left-right-container">
+            <!-- left -->
+          <div class="left">
             <div class="left__title">Корзина</div>
             <!--Cart Items-->
             <div class="cart">
@@ -95,18 +97,29 @@
                                 <label for="checkbox-item1" class="checkbox-container">
                                   <div class="cart-item__desc-uniter">
                                     <img class="item-img" src="images/item1.svg" alt="item image">
+                                    <div class="item-img__label--mobile">56</div>
                                     <div class="cart-item__desc">
+                                        <div class="cart-item__price--mobile">
+                                          <div class="cart-item__price__text">
+                                             <div class="font-20--bold price" id="price-mobile1">
+                                                522
+                                              </div>
+                                              <div class="font-16--bold"> сом</div>
+                                          </div>
+                                          <div class="font-13--grey--line-through">
+                                            <span id="initial-price-mobile1" class="initial-price">1051</span> сом
+                                          </div>
+                                        </div>
                                         <div class="cart-item__desc__title font-16">Футболка UZcotton мужская</div>
                                         <div class="cart-item__desc__parameters">
                                             <div class="font-13">Цвет: белый</div>
-                                            <div class="font-13">Размер: 56</div>
+                                            <div class="font-13 pc-only">Размер: 56</div>
                                         </div>
                                         <div class="font-13--grey">Коледино WB</div>
-                                        <div class="cart-item__desc__stock font-13--grey">ООО Вайлдберриз  <img src="images/i.svg"></div>
+                                        <div class="cart-item__desc__stock font-13--grey pc-only">ООО Вайлдберриз  <img src="images/i.svg"></div>
                                     </div>
                                   </div>
                                 </label>
-
                             </div>
                             <div class="cart-item__func-container">
                                 <div class="cart-item__func">
@@ -134,7 +147,7 @@
                                         <button class="img-button delete-cart-item" data-for="cart-item1" onclick="deleteItem(this)" id="delete-item1"><img src="images/delete-button.svg" alt="delete"></button>
                                     </div>
                                 </div>
-                                <div class="cart-item__price">
+                                <div class="cart-item__price pc-only">
                                     <div class="cart-item__price__text">
                                         <div class="font-20--bold price" id="price1">
                                             522
@@ -155,13 +168,23 @@
                                   <div class="cart-item__desc-uniter">
                                     <img class="item-img" src="images/item2.svg" alt="item image">
                                     <div class="cart-item__desc">
+                                        <div class="cart-item__price--mobile">
+                                          <div class="cart-item__price__text">
+                                              <div class="font-20--bold price" id="price-mobile2">
+                                              2100047
+                                              </div>
+                                              <div class="font-16--bold"> сом</div>
+                                          </div>
+                                          <div class="font-13--grey--line-through">
+                                            <span id="initial-price-mobile2" class="initial-price">2300047</span> сом
+                                          </div>
+                                        </div>
                                         <div class="cart-item__desc__title font-16">Силиконовый чехол картхолдер (отверстия) для карт, прозрачный кейс бампер на Apple Iphone XR, MobiSafe</div>
                                         <div class="cart-item__desc__parameters">
                                             <div class="font-13">Цвет: прозрачный</div>
-                                            <div class="font-13">Размер: 56</div>
                                         </div>
                                         <div class="font-13--grey">Коледино WB</div>
-                                        <div class="cart-item__desc__stock font-13--grey">
+                                        <div class="cart-item__desc__stock font-13--grey pc-only">
                                           ООО Мегапрофстиль  
                                           <div class="tooltip">
                                             <img src="images/i.svg">
@@ -177,7 +200,7 @@
                                               </div>
                                             </div>
                                           </div>
-                                     
+                                    
                                         </div>
                                     </div>
                                   </div>
@@ -208,7 +231,7 @@
                                         <button class="img-button delete-cart-item" data-for="cart-item2" onclick="deleteItem(this)" id="delete-item2"><img src="images/delete-button.svg" alt="delete"></button>
                                     </div>
                                 </div>
-                                <div class="cart-item__price">
+                                <div class="cart-item__price pc-only">
                                     <div class="cart-item__price__text">
                                         <div class="font-20--bold price" id="price2">
                                             2100047
@@ -221,17 +244,28 @@
                                 </div>
                             </div>
                         </div>
-                         <!-- item 3 -->
-                         <div class="cart-item" id="cart-item3">
+                        <!-- item 3 -->
+                        <div class="cart-item" id="cart-item3">
                           <div class="checkbox-container">
                               <input type="checkbox" id="checkbox-item3" name="checkbox-item" value="Карандаши" checked>
                               <label for="checkbox-item3" class="checkbox-container">
                                 <div class="cart-item__desc-uniter">
                                   <img class="item-img" src="images/item3.svg" alt="item image">
                                   <div class="cart-item__desc">
+                                      <div class="cart-item__price--mobile">
+                                        <div class="cart-item__price__text">
+                                            <div class="font-20--bold price" id="price-mobile3">
+                                              494
+                                            </div>
+                                            <div class="font-16--bold"> сом</div>
+                                        </div>
+                                        <div class="font-13--grey--line-through">
+                                          <span id="initial-price-mobile3" class="initial-price">950</span> сом
+                                        </div>
+                                      </div>
                                       <div class="cart-item__desc__title font-16">Карандаши цветные Faber-Castell "Замок", набор 24 цвета, заточенные, шестигранные, Faber Castell</div>
                                       <div class="font-13--grey">Коледино WB</div>
-                                      <div class="cart-item__desc__stock font-13--grey">ООО Вайлдберриз  <img src="images/i.svg"></div>
+                                      <div class="cart-item__desc__stock font-13--grey pc-only">ООО Вайлдберриз  <img src="images/i.svg"></div>
                                   </div>
                                 </div>
                               </label>
@@ -263,7 +297,7 @@
                                       <button class="img-button delete-cart-item" data-for="cart-item3" onclick="deleteItem(this)" id="delete-item3"><img src="images/delete-button.svg" alt="delete"></button>
                                   </div>
                               </div>
-                              <div class="cart-item__price">
+                              <div class="cart-item__price pc-only">
                                   <div class="cart-item__price__text">
                                       <div class="font-20--bold price" id="price3">
                                           494
@@ -296,11 +330,12 @@
                           <div class="checkbox-container">
                             <div class="cart-item__desc-uniter">
                               <img class="item-img" src="images/item1.svg" alt="item image">
+                              <div class="item-img__label--mobile">56</div>
                                   <div class="cart-item__desc">
                                       <div class="cart-item__desc__title font-16">Футболка UZcotton мужская</div>
                                       <div class="cart-item__desc__parameters">
                                           <div class="font-13">Цвет: белый</div>
-                                          <div class="font-13">Размер: 56</div>
+                                          <div class="font-13 pc-only">Размер: 56</div>
                                       </div>
                                   </div>
                             </div>
@@ -324,7 +359,6 @@
                                   <div class="cart-item__desc__title font-16">Силиконовый чехол картхолдер (отверстия) для карт, прозрачный кейс бампер на Apple Iphone XR, MobiSafe</div>
                                   <div class="cart-item__desc__parameters">
                                       <div class="font-13">Цвет: прозрачный</div>
-                                      <div class="font-13">Размер: 56</div>
                                   </div>
                               </div>
                             </div>
@@ -339,8 +373,8 @@
                               </div>
                           </div>
                       </div>
-                       <!-- item 3 -->
-                       <div class="cart-item--missing" id="missing-item3">
+                      <!-- item 3 -->
+                      <div class="cart-item--missing" id="missing-item3">
                         <div class="checkbox-container">
                           <div class="cart-item__desc-uniter">
                             <img class="item-img" src="images/item3.svg" alt="item image">
@@ -387,14 +421,14 @@
                       Стоимость доставки
                     </div>
                     
-                     Бесплатно
+                    Бесплатно
                   </div>
                   <!-- Дата доставки-->
                   <div class="form__main__content__item font-16" id="date-delivery-item1">
                     <div class="form__main__content__item__label font-16--bold">
                       5-6 февраля
                     </div>
-                     <div class="form__main__content__item__images">
+                    <div class="form__main__content__item__images">
                       <div class="img-container" id="item-img1">
                         <img src="images/item1.svg" class="item-img--small" alt="item">
                         <div class="cart-item-number--img-item" style="display: none;">1</div>
@@ -407,19 +441,19 @@
                         <img src="images/item3.svg" class="item-img--small" alt="item">
                         <div class="cart-item-number--img-item">2</div>
                       </div>
-                     </div>
+                    </div>
                   </div>
                   <!-- Дата доставки-->
                   <div class="form__main__content__item font-16" id="date-delivery-item2">
                     <div class="form__main__content__item__label font-16--bold">
                       7-8 февраля
                     </div>
-                     <div class="form__main__content__item__images" >
+                    <div class="form__main__content__item__images" >
                       <div class="img-container" id="item-img2(1)">
                         <img src="images/item2.svg" class="item-img--small" alt="item">
                         <div class="cart-item-number--img-item">16</div>
                       </div>
-                     </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -443,7 +477,7 @@
                 <div class="form__main__content">
                   <div class="payment-card">
                     <img src="images/payment/mir.svg" alt="payment card" id="card-img"> 
-                     <span id="card-number">1234 56** **** 1234</span> <span id="card-expiration-date">01/30</span>
+                    <span id="card-number">1234 56** **** 1234</span> <span id="card-expiration-date">01/30</span>
                   </div>
                 </div>
               </div>
@@ -525,7 +559,7 @@
               </div>
               <!--delivery-->
               <div class="form__main__content font-13" style="gap:12px">
-                <div class="form__main__content" style="gap: 4px">
+                <div class="form__main__content pc-only" style="gap: 4px">
                   <div class="form__main__header">
                     <div class="font-16--bold">Доставка в пункт выдачи</div>
                     <button class="img-button"><img src="images/edit-button.svg" alt="edit" onclick="toggleDeliveryPopup()"></button>
@@ -543,20 +577,20 @@
               </div>
               <!--payment-->
               <div class="form__main__content font-13" style="gap:12px">
-                <div class="form__main__content" style="gap: 4px">
+                <div class="form__main__content pc-only" style="gap: 4px">
                   <div class="form__main__header">
                     <div class="font-16--bold">Оплата картой</div>
                     <button class="img-button"><img src="images/edit-button.svg" alt="edit" onclick="togglePaymentPopup()"></button>
                   </div>
                 </div>
-                <div class="payment-card">
+                <div class="payment-card pc-only">
                   <img src="images/payment/mir.svg" alt="payment card" id="card-img-all"> 
-                   <span id="card-number-all">1234 56** **** 1234</span> <span id="card-expiration-date">01/30</span>
+                  <span id="card-number-all">1234 56** **** 1234</span> <span id="card-expiration-date">01/30</span>
                 </div>
                 <div class="form__footer--grey-background font-13" style="flex-direction: column; align-items: flex-start;">
                   <div class="checkbox-container" style="padding: 0; gap:8px">
                     <input type="checkbox" name="pay-before" id="pay-before-checkbox">
-                    <label for="payBefore">Списать оплату сразу</label>
+                    <label for="pay-before-checkbox">Списать оплату сразу</label>
                   </div>
                   <div id="hint">Спишем оплату с карты при получении</div>
                 </div>
@@ -572,8 +606,13 @@
               </div>
             </div>
           </div>
+          
 
         </div>
+        
+
+      </div>
+       
     </main>
     <!-- popup delivery-->
     <div class="popup-container" id="delivery-popup-container">

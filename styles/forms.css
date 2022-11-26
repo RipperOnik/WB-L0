@@ -3,7 +3,7 @@
   width: 100%;
   align-items: flex-start;
   gap: 16px;
-  /* isolation: isolate; */
+  width: 100%;
 }
 .form {
   display: flex;
@@ -12,7 +12,6 @@
   padding: 16px 0px 24px;
   gap: 24px;
   width: 100%;
-  /* isolation: isolate; */
 
   background: #ffffff;
   border-radius: 16px;
@@ -151,71 +150,3 @@
   font-size: 16px;
   line-height: 24px;
 }
-
-/** Кастомный чекбокс **/
-input[type="checkbox"].borderless-checkbox {
-  accent-color: white;
-}
-input[type="checkbox"].transparent-checkbox {
-  display: none;
-}
-input[type="checkbox"].transparent-checkbox + label::before {
-  content: "";
-  display: inline-block;
-  vertical-align: bottom;
-  width: 18px;
-  height: 18px;
-  border-radius: 10%;
-  vertical-align: top;
-  border-style: solid;
-  border-width: 1px;
-  border-color: rgb(133, 133, 133);
-}
-input[type="checkbox"].transparent-checkbox:checked + label::before {
-  content: "✓";
-  color: black;
-  font-size: 13px;
-  text-align: center;
-  background: transparent;
-  border-color: transparent;
-}
-/** Конец кастомного чекбокса **/
-
-/* form input  */
-.form__input-container {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  padding: 0px;
-  gap: 2px;
-  flex-grow: 1;
-}
-label.form__label {
-  visibility: hidden;
-}
-.form__error {
-  visibility: hidden;
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 14px;
-  color: #f55123;
-}
-input.form__input {
-  border: none;
-  width: 100%;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-}
-input.form__input::placeholder {
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 24px;
-  color: #a0a0a4;
-}
-input.form__input:focus {
-  outline: none;
-}
-input.form__input--error {
-  border-bottom: 1px solid #f55123;
-  color: #f55123;
-}
-/* form input  */

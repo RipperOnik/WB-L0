@@ -5,8 +5,6 @@ let closedButton
 const openedHeader = document.getElementById("cart__items__header--opened")
 const closedHeader = document.getElementById("cart__items__header--closed")
 
-const priceTags = document.querySelectorAll(".price")
-
 const steppers = document.querySelectorAll(".incrementor-input")
 
 const itemsNumber = document.getElementById("items-number")
@@ -26,7 +24,10 @@ const incrementButtons = document.querySelectorAll(".increment-button")
 
 const deleteCartItemButtons = document.querySelectorAll(".delete-cart-item")
 
-const initialPriceTags = document.querySelectorAll(".initial-price")
+const initialPriceTags = document.querySelectorAll(".cart-item__price .initial-price")
+const priceTags = document.querySelectorAll(".cart-item__price .price")
+const initialPriceTagsMobile = document.querySelectorAll(".cart-item__price--mobile .initial-price")
+const priceTagsMobile = document.querySelectorAll(".cart-item__price--mobile .price")
 const initialPriceTagAll = document.getElementById("initial-price-all")
 
 const orderBtn = document.getElementById("order-button-ok")
@@ -101,6 +102,8 @@ checkboxAll.addEventListener('change', function () {
             checkbox.checked = true
         })
     }
+    calculatePriceAndAmount()
+    calculateDiscount()
 });
 
 payBeforeCheckbox.addEventListener('change', (event) => {
