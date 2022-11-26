@@ -24,6 +24,8 @@ const emailRegex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@
 // const phoneRegex = /^[\+]\d{1}[-\(]?\d{3}\)?-?\d{3}-?\d{2}-?\d{2}$/
 const phoneRegex = /^[\+]\d{1}[- ]?[\(]?\d{3}[\)]?[- ]?\d{3}[\- ]?\d{2}[\- ]?\d{2}$/
 
+const innRegex = /^[0-9]*$/
+
 // Lifts a placeholder when user types something in
 function liftPlaceholder(event) {
     const value = event.target.value
@@ -37,26 +39,31 @@ function liftPlaceholder(event) {
     }
 }
 
-function validateEmail(event) {
+function validateFormat(event) {
     const value = event.target.value
     const input = event.target
     const errorEmptyLabelId = input.getAttribute("data-error")
     const errorEmptyLabel = document.getElementById(errorEmptyLabelId)
-    if (value.match(emailRegex)) {
-        errorEmptyLabel.style.visibility = "hidden"
-        input.classList.remove("form__input--error")
-        input.removeEventListener('input', validateEmail)
+    if (errorEmptyLabelId === errorLabelIds.emailError) {
+        if (value.match(emailRegex)) {
+            errorEmptyLabel.style.visibility = "hidden"
+            input.classList.remove("form__input--error")
+            input.removeEventListener('input', validateFormat)
+        }
     }
-}
-function validatePhoneNumber(event) {
-    const value = event.target.value
-    const input = event.target
-    const errorEmptyLabelId = input.getAttribute("data-error")
-    const errorEmptyLabel = document.getElementById(errorEmptyLabelId)
-    if (value.match(phoneRegex)) {
-        errorEmptyLabel.style.visibility = "hidden"
-        input.classList.remove("form__input--error")
-        input.removeEventListener('input', validatePhoneNumber)
+    else if (errorEmptyLabelId === errorLabelIds.telError) {
+        if (value.match(phoneRegex)) {
+            errorEmptyLabel.style.visibility = "hidden"
+            input.classList.remove("form__input--error")
+            input.removeEventListener('input', validateFormat)
+        }
+    }
+    else if (errorEmptyLabelId === errorLabelIds.innError) {
+        if (value.match(innRegex)) {
+            errorEmptyLabel.style.visibility = "hidden"
+            input.classList.remove("form__input--error")
+            input.removeEventListener('input', validateFormat)
+        }
     }
 }
 
@@ -71,19 +78,20 @@ function validateNotEmpty(event) {
         input.removeEventListener('input', validateNotEmpty)
     }
 }
-function validateInputs(event) {
+
+function validateOnFocusOut(event) {
     const input = event.target
     const value = event.target.value
     const errorEmptyLabelId = input.getAttribute("data-error")
     const errorEmptyLabel = document.getElementById(errorEmptyLabelId)
     const errorMessage = errorWrongMessages.get(errorEmptyLabelId)
     if (errorEmptyLabelId === errorLabelIds.emailError) {
-        if (!value.match(emailRegex)) {
+        if (!value.match(emailRegex) && value.length !== 0) {
             errorEmptyLabel.style.visibility = "visible"
             input.classList.add("form__input--error")
             errorEmptyLabel.innerText = errorMessage
             // when a user made a mistake, we will listen to validate this field 
-            input.addEventListener('input', validateEmail)
+            input.addEventListener('input', validateFormat)
         }
         else {
             errorEmptyLabel.style.visibility = "hidden"
@@ -91,12 +99,25 @@ function validateInputs(event) {
         }
     }
     else if (errorEmptyLabelId === errorLabelIds.telError) {
-        if (!value.match(phoneRegex)) {
+        if (!value.match(phoneRegex) && value.length !== 0) {
             errorEmptyLabel.style.visibility = "visible"
             input.classList.add("form__input--error")
             errorEmptyLabel.innerText = errorMessage
             // when a user made a mistake, we will listen to validate this field 
-            input.addEventListener('input', validatePhoneNumber)
+            input.addEventListener('input', validateFormat)
+        }
+        else {
+            errorEmptyLabel.style.visibility = "hidden"
+            input.classList.remove("form__input--error")
+        }
+    }
+    else if (errorEmptyLabelId === errorLabelIds.innError) {
+        if (!value.match(innRegex) && value.length !== 0) {
+            errorEmptyLabel.style.visibility = "visible"
+            input.classList.add("form__input--error")
+            errorEmptyLabel.innerText = errorMessage
+            // when a user made a mistake, we will listen to validate this field 
+            input.addEventListener('input', validateFormat)
         }
         else {
             errorEmptyLabel.style.visibility = "hidden"
@@ -143,7 +164,7 @@ formPhoneInput.addEventListener('input', event => {
 
 formInputs.forEach(formInput => {
     formInput.addEventListener('input', liftPlaceholder)
-    formInput.addEventListener('focusout', validateInputs)
+    formInput.addEventListener('focusout', validateOnFocusOut)
 })
 
 
@@ -158,28 +179,52 @@ orderButton.addEventListener('click', () => {
             errorEmptyLabel.innerText = errorMessage
             input.addEventListener('input', validateNotEmpty)
         }
+        // else {
+        //     errorEmptyLabel.style.visibility = "hidden"
+        //     input.classList.remove("form__input--error")
+        // }
         else {
-            errorEmptyLabel.style.visibility = "hidden"
-            input.classList.remove("form__input--error")
+            const value = input.value
+            if (errorEmptyLabelId === errorLabelIds.emailError) {
+                if (!value.match(emailRegex) && value.length !== 0) {
+                    errorEmptyLabel.style.visibility = "visible"
+                    input.classList.add("form__input--error")
+                    errorEmptyLabel.innerText = errorMessage
+                    // when a user made a mistake, we will listen to validate this field 
+                    input.addEventListener('input', validateFormat)
+                }
+                else {
+                    errorEmptyLabel.style.visibility = "hidden"
+                    input.classList.remove("form__input--error")
+                }
+            }
+            else if (errorEmptyLabelId === errorLabelIds.telError) {
+                if (!value.match(phoneRegex) && value.length !== 0) {
+                    errorEmptyLabel.style.visibility = "visible"
+                    input.classList.add("form__input--error")
+                    errorEmptyLabel.innerText = errorMessage
+                    // when a user made a mistake, we will listen to validate this field 
+                    input.addEventListener('input', validateFormat)
+                }
+                else {
+                    errorEmptyLabel.style.visibility = "hidden"
+                    input.classList.remove("form__input--error")
+                }
+            }
+            else if (errorEmptyLabelId === errorLabelIds.innError) {
+                if (!value.match(innRegex) && value.length !== 0) {
+                    errorEmptyLabel.style.visibility = "visible"
+                    input.classList.add("form__input--error")
+                    errorEmptyLabel.innerText = errorMessage
+                    // when a user made a mistake, we will listen to validate this field 
+                    input.addEventListener('input', validateFormat)
+                }
+                else {
+                    errorEmptyLabel.style.visibility = "hidden"
+                    input.classList.remove("form__input--error")
+                }
+            }
         }
     })
 })
 
-// Debounce 
-// function debounce(callback, delay) {
-//     let timer
-//     return (...args) => {
-//         if (timer) {
-//             clearTimeout(timer)
-//         }
-//         timer = setTimeout(() => {
-//             callback(...args)
-//         }, delay)
-//     }
-// }
-// const debounceInput = debounce((event) => {
-//     console.log(event.target.value)
-// }, 1000)
-// formInputs.forEach(formInput => {
-//     formInput.addEventListener('input', debounceInput)
-// })
