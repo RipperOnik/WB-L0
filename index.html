@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="styles/forms.css">
     <link rel="stylesheet" href="styles/popup.css">
     <link rel="stylesheet" href="styles/fonts.css">
+    <link rel="stylesheet" href="styles/tooltip.css">
     <title>Document</title>
   </head>
   <body>
@@ -160,7 +161,24 @@
                                             <div class="font-13">Размер: 56</div>
                                         </div>
                                         <div class="font-13--grey">Коледино WB</div>
-                                        <div class="cart-item__desc__stock font-13--grey">ООО Мегапрофстиль  <img src="images/i.svg"></div>
+                                        <div class="cart-item__desc__stock font-13--grey">
+                                          ООО Мегапрофстиль  
+                                          <div class="tooltip">
+                                            <img src="images/i.svg">
+                                            <div class="tooltip-content">
+                                              <div class="font-13--bold">
+                                                ООО «Мегапрофстиль»
+                                              </div>
+                                              <div class="font-13">
+                                                ОГРН: 5167746237148
+                                              </div>
+                                              <div class="font-13">
+                                                129337, Москва, улица Красная Сосна, 2, корпус 1, стр. 1, помещение 2, офис 34
+                                              </div>
+                                            </div>
+                                          </div>
+                                     
+                                        </div>
                                     </div>
                                   </div>
                                   
@@ -368,6 +386,7 @@
                     <div class="form__main__content__item__label font-16--bold">
                       Стоимость доставки
                     </div>
+                    
                      Бесплатно
                   </div>
                   <!-- Дата доставки-->
@@ -405,7 +424,12 @@
                 </div>
               </div>
               <div class="form__footer font-13">
-                <img src="images/price shipping.svg" alt="price shipping img"> Обратная доставка товаров на склад при отказе - <span class="font-13--green"> бесплатно</span>
+                <img src="images/price shipping.svg" alt="price shipping img"> Обратная доставка товаров на склад при отказе - 
+                <div class="tooltip">
+                  <span class="font-13--green"> бесплатно</span>
+                  <div class="tooltip-content font-13" style="left: -100px">Если товары не подойдут, мы вернем их обратно на склад - это бесплатно</div>
+                </div>
+                
               </div>
             </div>
 

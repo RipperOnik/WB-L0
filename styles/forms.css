@@ -3,7 +3,7 @@
   width: 100%;
   align-items: flex-start;
   gap: 16px;
-  isolation: isolate;
+  /* isolation: isolate; */
 }
 .form {
   display: flex;
@@ -12,7 +12,7 @@
   padding: 16px 0px 24px;
   gap: 24px;
   width: 100%;
-  isolation: isolate;
+  /* isolation: isolate; */
 
   background: #ffffff;
   border-radius: 16px;

@@ -70,7 +70,6 @@ input[type="checkbox"] {
   align-items: flex-start;
   padding: 0px;
   gap: 16px;
-  isolation: isolate;
 }
 .cart-item--missing{
   width: 100%;
@@ -80,7 +79,6 @@ input[type="checkbox"] {
   align-items: flex-start;
   padding: 0px;
   gap: 16px;
-  isolation: isolate;
   color: #a0a0a4;
 
 }
@@ -126,6 +124,7 @@ input[type="checkbox"] {
   display: flex; 
   align-items: center"
 }
+
 .cart-item__desc__text {
   font-style: normal;
   font-weight: 400;
