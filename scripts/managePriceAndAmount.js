@@ -34,6 +34,14 @@ const orderBtn = document.getElementById("order-button-ok")
 const totalDiscountTag = document.getElementById("total-discount")
 const payBeforeCheckbox = document.getElementById("pay-before-checkbox")
 
+const discountPercentageTags = document.querySelectorAll(".tooltip-content--discount .discount-percentage")
+const discountNumberTags = document.querySelectorAll(".tooltip-content--discount .discount-number")
+const tooltips = document.querySelectorAll(".tooltip")
+const personalDiscountPercentageTags = document.querySelectorAll(".tooltip-content--discount .personal-discount-percentage")
+const personalDiscountNumberTags = document.querySelectorAll(".tooltip-content--discount .personal-discount-number")
+
+
+
 
 
 
@@ -75,9 +83,29 @@ function calculateDiscount() {
     }
 
     const discounts = []
+    console.log(discountPercentageTags);
+
 
     for (let i = 0; i < items.length; i++) {
         discounts.push(initialPrices[i] - prices[i])
+
+        let discountPercentage = (1 - prices[i] / initialPrices[i]) * 100
+
+        const personalDiscountPercentage = discountPercentage > 10 ? 10 : discountPercentage
+
+        const personalDiscount = initialPrices[i] * personalDiscountPercentage / 100
+
+        discountPercentage = discountPercentage > 10 ? discountPercentage - 10 : discountPercentage
+
+        discountPercentage = discountPercentage == personalDiscountPercentage ? 0 : discountPercentage
+
+        discountPercentageTags[i].innerText = discountPercentage > 0 ? Math.round(discountPercentage) : 0
+
+
+        discountNumberTags[i].innerText = discountPercentage > 0 ? Math.round(initialPrices[i] * discountPercentage / 100) : 0
+
+        personalDiscountPercentageTags[i].innerText = Math.round(personalDiscountPercentage)
+        personalDiscountNumberTags[i].innerText = Math.round(personalDiscount)
     }
     let discountValue = 0, initialPriceValue = 0
     for (let i = 0; i < items.length; i++) {
@@ -94,6 +122,14 @@ function calculateDiscount() {
 
 calculatePriceAndAmount()
 calculateDiscount()
+
+
+tooltips.forEach(tooltip => {
+    tooltip.addEventListener("mouseover", () => {
+        calculateDiscount()
+    })
+})
+
 
 
 checkboxAll.addEventListener('change', function () {

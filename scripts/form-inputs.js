@@ -39,6 +39,7 @@ function liftPlaceholder(event) {
     }
 }
 
+
 function validateFormat(event) {
     const value = event.target.value
     const input = event.target
