@@ -15,7 +15,7 @@
   opacity: 1;
 }
 /* display mobile  */
-/* @media screen and (max-width: 1100px) {
+@media screen and (max-width: 1100px) {
   .navbar {
     height: 56px;
   }
@@ -127,7 +127,7 @@
     position: absolute !important;
     bottom: 16px;
   }
-} */
+}
 /* display pc */
 @media screen and (min-width: 1100px) {
   .button-search-mobile {
