@@ -18,10 +18,7 @@ errorWrongMessages.set(errorLabelIds.telError, 'Формат: +9 999 999 99 99')
 errorWrongMessages.set(errorLabelIds.innError, 'Формат: 1234567')
 
 const emailRegex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-// const phoneRegex = /^\+?[78][-\(]?\d{3}\)?-?\d{3}-?\d{2}-?\d{2}$/
-// const phoneRegex = /^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$/
 
-// const phoneRegex = /^[\+]\d{1}[-\(]?\d{3}\)?-?\d{3}-?\d{2}-?\d{2}$/
 const phoneRegex = /^[\+]\d{1}[- ]?[\(]?\d{3}[\)]?[- ]?\d{3}[\- ]?\d{2}[\- ]?\d{2}$/
 
 const innRegex = /^[0-9]*$/
@@ -60,8 +57,11 @@ function validateFormat(event) {
         }
     }
     else if (errorEmptyLabelId === errorLabelIds.innError) {
+        const labelBelowId = input.getAttribute("data-label-below")
+        const labelBelow = document.getElementById(labelBelowId)
         if (value.match(innRegex)) {
             errorEmptyLabel.style.visibility = "hidden"
+            labelBelow.style.display = "block"
             input.classList.remove("form__input--error")
             input.removeEventListener('input', validateFormat)
         }
@@ -73,8 +73,11 @@ function validateNotEmpty(event) {
     const input = event.target
     const errorEmptyLabelId = input.getAttribute("data-error")
     const errorEmptyLabel = document.getElementById(errorEmptyLabelId)
+    const labelBelowId = input.getAttribute("data-label-below")
+    const labelBelow = document.getElementById(labelBelowId)
     if (value.length > 0) {
         errorEmptyLabel.style.visibility = "hidden"
+        labelBelow.style.display = "block"
         input.classList.remove("form__input--error")
         input.removeEventListener('input', validateNotEmpty)
     }
@@ -84,6 +87,7 @@ function validateOnFocusOut(event) {
     const input = event.target
     const value = event.target.value
     const errorEmptyLabelId = input.getAttribute("data-error")
+
     const errorEmptyLabel = document.getElementById(errorEmptyLabelId)
     const errorMessage = errorWrongMessages.get(errorEmptyLabelId)
     if (errorEmptyLabelId === errorLabelIds.emailError) {
@@ -96,6 +100,7 @@ function validateOnFocusOut(event) {
         }
         else {
             errorEmptyLabel.style.visibility = "hidden"
+
             input.classList.remove("form__input--error")
         }
     }
@@ -113,7 +118,10 @@ function validateOnFocusOut(event) {
         }
     }
     else if (errorEmptyLabelId === errorLabelIds.innError) {
+        const labelBelowId = input.getAttribute("data-label-below")
+        const labelBelow = document.getElementById(labelBelowId)
         if (!value.match(innRegex) && value.length !== 0) {
+            labelBelow.style.display = "none"
             errorEmptyLabel.style.visibility = "visible"
             input.classList.add("form__input--error")
             errorEmptyLabel.innerText = errorMessage
@@ -122,6 +130,7 @@ function validateOnFocusOut(event) {
         }
         else {
             errorEmptyLabel.style.visibility = "hidden"
+            labelBelow.style.display = "block"
             input.classList.remove("form__input--error")
         }
     }
@@ -174,19 +183,21 @@ orderButton.addEventListener('click', () => {
     formInputs.forEach(input => {
         const errorEmptyLabelId = input.getAttribute("data-error")
         const errorEmptyLabel = document.getElementById(errorEmptyLabelId)
-        const errorMessage = errorEmptyMessages.get(errorEmptyLabelId)
+        let errorMessage = errorEmptyMessages.get(errorEmptyLabelId)
         if (input.value.length === 0) {
+            if (errorEmptyLabelId === errorLabelIds.innError) {
+                const labelBelowId = input.getAttribute("data-label-below")
+                const labelBelow = document.getElementById(labelBelowId)
+                labelBelow.style.display = "none"
+            }
             errorEmptyLabel.style.visibility = "visible"
             input.classList.add("form__input--error")
             errorEmptyLabel.innerText = errorMessage
             input.addEventListener('input', validateNotEmpty)
         }
-        // else {
-        //     errorEmptyLabel.style.visibility = "hidden"
-        //     input.classList.remove("form__input--error")
-        // }
         else {
             const value = input.value
+            errorMessage = errorWrongMessages.get(errorEmptyLabelId)
             if (errorEmptyLabelId === errorLabelIds.emailError) {
                 if (!value.match(emailRegex) && value.length !== 0) {
                     errorEmptyLabel.style.visibility = "visible"
@@ -214,7 +225,9 @@ orderButton.addEventListener('click', () => {
                 }
             }
             else if (errorEmptyLabelId === errorLabelIds.innError) {
+
                 if (!value.match(innRegex) && value.length !== 0) {
+                    labelBelow.style.display = "none"
                     errorEmptyLabel.style.visibility = "visible"
                     input.classList.add("form__input--error")
                     errorEmptyLabel.innerText = errorMessage
@@ -223,6 +236,7 @@ orderButton.addEventListener('click', () => {
                 }
                 else {
                     errorEmptyLabel.style.visibility = "hidden"
+                    labelBelow.style.display = "block"
                     input.classList.remove("form__input--error")
                 }
             }
