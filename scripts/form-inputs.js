@@ -73,11 +73,14 @@ function validateNotEmpty(event) {
     const input = event.target
     const errorEmptyLabelId = input.getAttribute("data-error")
     const errorEmptyLabel = document.getElementById(errorEmptyLabelId)
-    const labelBelowId = input.getAttribute("data-label-below")
-    const labelBelow = document.getElementById(labelBelowId)
+
     if (value.length > 0) {
         errorEmptyLabel.style.visibility = "hidden"
-        labelBelow.style.display = "block"
+        if (errorEmptyLabelId === errorLabelIds.innError) {
+            const labelBelowId = input.getAttribute("data-label-below")
+            const labelBelow = document.getElementById(labelBelowId)
+            labelBelow.style.display = "block"
+        }
         input.classList.remove("form__input--error")
         input.removeEventListener('input', validateNotEmpty)
     }
