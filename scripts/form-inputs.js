@@ -153,11 +153,11 @@ function validateOnFocusOut(event) {
 // prevent typing letters
 formPhoneInput.addEventListener('keydown', event => {
     const charCode = event.which
-    // console.log(charCode);
     if ((charCode >= 65 && charCode <= 90) || charCode == 32) {
         event.preventDefault()
     }
 })
+
 
 let prevLength = 0
 // add space between number groups

@@ -680,9 +680,12 @@
             <div class="popup__content__item font-16" id="popup-issue-point-item1">
               <div class="checkbox-container--baseline">
                 <input type="radio" id="issue-point1" name="issue-point" value="Бишкек, улица Ахматбека Суюмбаева, 12/1 $$$ 4.99" checked >
-                <label for="delivery-radio1">
-                  Бишкек, улица Ахматбека Суюмбаева, 12/1
+                <label for="issue-point1">
+                  <div class="checkbox-content">
+                    Бишкек, улица Ахматбека Суюмбаева, 12/1
                     <div> <img src="images/star.svg" alt="star"> 4.99  <span class="font-13--grey"> Пункт выдачи</span> </div>
+                  </div>
+
                 </label>
               </div>
               <button class="img-button" data-for="popup-issue-point-item1" onclick="deleteItem(this)"><img src="images/delete-button.svg" alt="delete"></button>
@@ -690,9 +693,12 @@
           <div class="popup__content__item font-16" id="popup-issue-point-item2">
               <div class="checkbox-container--baseline">
                 <input type="radio" id="issue-point2" name="issue-point" value="Бишкек, микрорайон Джал, улица Ахунбаева Исы, д. 67/1 $$$ 4.99">
-                <label for="delivery-radio2">
+                <label for="issue-point2">
+                  <div class="checkbox-content">
                     Бишкек, микрорайон Джал, улица Ахунбаева Исы, д. 67/1
                     <div> <img src="images/star.svg" alt="star"> 4.99  <span class="font-13--grey"> Пункт выдачи</span> </div>
+                  </div>
+    
                 </label>
               </div>
               <button class="img-button" data-for="popup-issue-point-item2" onclick="deleteItem(this)"><img src="images/delete-button.svg" alt="delete"></button>
@@ -700,9 +706,11 @@
           <div class="popup__content__item font-16" id="popup-issue-point-item3">
               <div class="checkbox-container--baseline">
                 <input type="radio" id="issue-point3" name="issue-point" value="Бишкек, улица Табышалиева, д. 57 $$$ 4.99">
-                <label for="delivery-radio3">
+                <label for="issue-point3">
+                  <div class="checkbox-content">
                     Бишкек, улица Табышалиева, д. 57
                     <div> <img src="images/star.svg" alt="star"> 4.99  <span class="font-13--grey"> Пункт выдачи</span> </div>
+                  </div>
                 </label>
               </div>
               <button class="img-button" data-for="popup-issue-point-item3" onclick="deleteItem(this)"><img src="images/delete-button.svg" alt="delete"></button>
@@ -714,7 +722,7 @@
             <div class="popup__content__item font-16" id="popup-courier-item1">
               <div class="checkbox-container--baseline">
                 <input type="radio" id="courier-address1" name="courier-address" value="Бишкек, улица Табышалиева, 57" checked >
-                <label for="delivery-radio1">
+                <label for="courier-address1">
                   Бишкек, улица Табышалиева, 57
                 </label>
               </div>
@@ -723,7 +731,7 @@
           <div class="popup__content__item font-16" id="popup-courier-item2">
               <div class="checkbox-container--baseline">
                 <input type="radio" id="courier-address2" name="courier-address" value="Бишкек, улица Жукеева-Пудовника, 77/1">
-                <label for="delivery-radio2">
+                <label for="courier-address2">
                     Бишкек, улица Жукеева-Пудовника, 77/1
                 </label>
               </div>
@@ -732,7 +740,7 @@
           <div class="popup__content__item font-16" id="popup-courier-item3">
               <div class="checkbox-container--baseline">
                 <input type="radio" id="courier-address3" name="courier-address" value="Бишкек, микрорайон Джал, улица Ахунбаева Исы, 67/1">
-                <label for="delivery-radio3">
+                <label for="courier-address3">
                     Бишкек, микрорайон Джал, улица Ахунбаева Исы, 67/1
                 </label>
               </div>
@@ -757,10 +765,8 @@
             <div class="checkbox-container--baseline">
               <input type="radio" id="radio-card1" name="card" value="1234 56** **** 1234 $$$ mir" checked >
               <label for="radio-card1">
-                <div class="payment-card">
-                  <img src="images/payment/mir.svg" alt="payment card" id="card-img"> 
-                    <span id="card-number-radio1">1234 56** **** 1234</span> 
-                </div>
+                  <img src="images/payment/mir.svg" alt="payment card" id="card-img" class="form__card-img"> 
+                  <span id="card-number-radio1">1234 56** **** 1234</span> 
               </label>
             </div>
           </div>
@@ -769,10 +775,8 @@
             <div class="checkbox-container--baseline">
               <input type="radio" id="radio-card2" name="card" value="1234 56** **** 1234 $$$ visa">
               <label for="radio-card2">
-                <div class="payment-card">
-                  <img src="images/payment/visa.svg" alt="payment card" id="card-img"> 
-                    <span id="card-number-radio2">1234 56** **** 1234</span> 
-                </div>
+                  <img src="images/payment/visa.svg" alt="payment card" id="card-img" class="form__card-img"> 
+                  <span id="card-number-radio2">1234 56** **** 1234</span> 
               </label>
             </div>
           </div>
@@ -781,10 +785,8 @@
             <div class="checkbox-container--baseline">
               <input type="radio" id="radio-card3" name="card" value="1234 56** **** 1234 $$$ mastercard" >
               <label for="radio-card3">
-                <div class="payment-card">
-                  <img src="images/payment/mastercard.svg" alt="payment card" id="card-img"> 
-                    <span id="card-number-radio3">1234 56** **** 1234</span> 
-                </div>
+                  <img src="images/payment/mastercard.svg" alt="payment card" id="card-img" class="form__card-img"> 
+                  <span id="card-number-radio3">1234 56** **** 1234</span> 
               </label>
             </div>
           </div>
@@ -793,10 +795,8 @@
             <div class="checkbox-container--baseline">
               <input type="radio" id="radio-card4" name="card" value="1234 56** **** 1234 $$$ maestro">
               <label for="radio-card4">
-                <div class="payment-card">
-                  <img src="images/payment/maestro.svg" alt="payment card" id="card-img"> 
-                    <span id="card-number-radio4">1234 56** **** 1234</span> 
-                </div>
+                  <img src="images/payment/maestro.svg" alt="payment card" id="card-img" class="form__card-img">  
+                  <span id="card-number-radio4">1234 56** **** 1234</span> 
               </label>
             </div>
           </div>
