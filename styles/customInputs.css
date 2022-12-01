@@ -47,16 +47,14 @@ input[type="checkbox"].transparent-checkbox + label::before {
   content: "";
   display: inline-block;
   border-radius: 6px;
-  vertical-align: middle;
   margin-right: 0.5em;
   border: 1px solid rgba(0, 0, 0, 0.2);
-  width: 22px;
+  width: 13px;
   flex-shrink: 0;
   flex-grow: 0;
-  height: 22px;
+  height: 13px;
   background-repeat: no-repeat !important;
   background-position: center center !important;
-  background-size: 56% 50% !important;
 }
 input[type="checkbox"].transparent-checkbox:checked + label::before {
   background: transparent;
