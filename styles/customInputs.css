@@ -80,7 +80,14 @@ label.form__label {
   font-weight: 400;
   font-size: 12px;
   line-height: 14px;
-  color: #f55123;
+  color: #f55123 !important;
+}
+.form__label {
+  visibility: visible !important;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  color: black;
 }
 input.form__input {
   border: none;

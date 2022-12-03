@@ -34,11 +34,12 @@ const orderBtn = document.getElementById("order-button-ok")
 const totalDiscountTag = document.getElementById("total-discount")
 const payBeforeCheckbox = document.getElementById("pay-before-checkbox")
 
-const discountPercentageTags = document.querySelectorAll(".tooltip-content--discount .discount-percentage")
-const discountNumberTags = document.querySelectorAll(".tooltip-content--discount .discount-number")
-const tooltips = document.querySelectorAll(".tooltip")
-const personalDiscountPercentageTags = document.querySelectorAll(".tooltip-content--discount .personal-discount-percentage")
-const personalDiscountNumberTags = document.querySelectorAll(".tooltip-content--discount .personal-discount-number")
+const tooltips = [...document.querySelectorAll(".tooltip")].filter(item => item.style.display !== "none")
+
+const discountPercentageTags = [...document.querySelectorAll(".tooltip-content--discount .discount-percentage")]
+const discountNumberTags = [...document.querySelectorAll(".tooltip-content--discount .discount-number")]
+const personalDiscountPercentageTags = [...document.querySelectorAll(".tooltip-content--discount .personal-discount-percentage")]
+const personalDiscountNumberTags = [...document.querySelectorAll(".tooltip-content--discount .personal-discount-number")]
 
 
 
@@ -83,7 +84,6 @@ function calculateDiscount() {
     }
 
     const discounts = []
-    console.log(discountPercentageTags);
 
 
     for (let i = 0; i < items.length; i++) {
