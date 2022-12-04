@@ -83,7 +83,7 @@ label.form__label {
   color: #f55123 !important;
 }
 .form__label {
-  visibility: visible !important;
+  visibility: visible;
   font-weight: 400;
   font-size: 12px;
   line-height: 14px;
